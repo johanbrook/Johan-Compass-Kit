@@ -10,7 +10,7 @@ My Compass Kit is quite stripped – it mainly consists of handy variables, mixi
 
 # Why?
 
-I'm fed up with copying and pasting code. I want to create. Fast.
+I'm fed up with copying and pasting code. I want to create. Fast. I believe in [DRY](http://en.wikipedia.org/wiki/DRY), and having a collection of Sass files around makes perfect sense.
 
 # How?
 
@@ -37,31 +37,33 @@ To have Compass watch your Sass file, and compile them on-the-fly:
 
 (`Ctrl + C` to abort).
 
-## base.scss
+Compass compiles Sass files into CSS in development mode by default, so your CSS files will be uncompressed in development. Please see below ("Config" section) for quickly compiling for production. You're however able to [override this via the command line](http://compass-style.org/help/tutorials/command-line/).
+
+### _base.scss
 
 `base.scss` is essentially a 'config' file with variables, mixins, resets, functions, helper classes – basically everything global you'd want to use all over your site. It gets imported before everything else.
 
-## main.scss
+### _main.scss
 
 The main site file. In here you write your CSS. I recommend you to branch out your site with imports (see below).
 
-## _partials.scss
+### _partials.scss
 
 Thanks to Sass' powerful `@import` command, you're able to pull in external files directly into your main files without extra HTTP requests. Therefore I've divided the header, footer, and form sections into separate files. They are imported into `_partials.scss`, which is imported into `_main.scs`. Prepend a "_" (underscore) to your partials.
 
-## _responsive.scss, _print.scss, and ie.scss
+### _responsive.scss, _print.scss, and ie.scss
 
 Extra files. `_responsive.scss` includes some media queries (and debug helpers: [http://johanbrook.com/design/css/debugging-css-media-queries](http://johanbrook.com/design/css/debugging-css-media-queries/)).
 
 # Config
 
-## Config.rb
+### Config.rb
 
 Compass' `config.rb` includes a basic setup, sets some paths, and so on. Feel free to poke around. Especially double-check the `http_path` variable, and set it to the path of this directory. I've used a sample 'compass-boilerplate' name right now. This is important to get right, since various Compass helpers (such as the insanely great [`image_url` function](http://compass-style.org/reference/compass/helpers/urls/) relies on a correct path).
 
 For more info, please see the [Compass configuration reference](http://compass-style.org/help/tutorials/configuration-reference/).
 
-## Rakefile
+### Rakefile
 
 	$ rake sass
 	
