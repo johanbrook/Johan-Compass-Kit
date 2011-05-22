@@ -1,0 +1,70 @@
+/*	=MAIN
+----------------------------------------------------------------------*/
+
+html{
+	/* Hater? Remove the line below then .. */
+	-webkit-font-smoothing: antialiased;
+}
+
+
+body{
+	font: normal #{$fontsize}/#{$lineheight} $sans;
+	color: $bodycolor;	
+	
+	/* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
+	
+	/* Example: */
+	width: 90%;
+	margin: 0 auto;
+	max-width: $page_width;
+}
+
+
+img::selection{
+	background: transparent;
+}
+img::-moz-selection{
+	background: transparent;
+}
+
+
+/*	=LINKS
+----------------------------------------------------------------------*/
+
+a{
+	-webkit-tap-highlight-color: $highlight;
+	color: $accent;
+}
+
+a:hover, a:focus{
+	
+}
+
+
+/*	=HEADINGS
+----------------------------------------------------------------------*/
+
+h1{
+	font-size: 1.984em;
+	line-height: $lineheight*2;
+}
+
+h2{
+	font-size: 1.226em;
+}
+
+
+h3{
+	
+}
+
+
+// Partials
+
+@import "partials";
+
+
+// Views
+
+@import "views/home";
+

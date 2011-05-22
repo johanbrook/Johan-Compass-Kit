@@ -1,0 +1,369 @@
+/*----------------------------------------------------------------
+*
+*	STARTING POINT
+*
+*	Crafted by Johan Brook (http://johanbrook.com)
+*
+*	Using Sass (http://sass-lang.com) and Compass (http://compass-style.org)
+*
+*	Modular Scale  (http://modularscale.com/scale/?px1=14&px2=308&ra1=1.618&ra2=0)
+*	---------------------- 
+*	14px @ 1:1.618	 
+*	308px @ 1:1.618	
+*	----------------------
+*
+----------------------------------------------------------------*/
+/*	=UTILS
+----------------------------------------------------------------------*/
+/* Imports the Meyer reset (the latest, for HTML5) */
+/* line 17, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 115, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Make some block elements relative: */
+/* line 8, ../sass/library/_reset.scss */
+div, section, article, figure, aside, hgroup, header, footer, nav,
+ul, ol, p, a, li, form {
+  position: relative;
+}
+
+/* line 12, ../sass/library/_reset.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 13, ../sass/library/_reset.scss */
+em {
+  font-style: italic;
+}
+
+/* line 14, ../sass/library/_reset.scss */
+small {
+  font-size: 80%;
+}
+
+/*	=GLOBAL ANIMATIONS
+----------------------------------------------------------------------*/
+/* Reseting animation */
+@-webkit-keyframes reset {
+  /* line 147, ../sass/_base.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 148, ../sass/_base.scss */
+  100% {
+    opacity: 0;
+  }
+}
+
+/*- ELEMENT SETUP
+----------------------------------------------------------------------*/
+/* line 157, ../sass/_base.scss */
+img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* Make links 'clickable' */
+/* line 164, ../sass/_base.scss */
+a:active, a:focus {
+  outline: none;
+  top: 1px;
+}
+
+/* line 170, ../sass/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  /* Fixes kerning. Watch out for some performance issues. */
+}
+
+/* line 175, ../sass/_base.scss */
+pre, code {
+  font-family: Monaco, "Courier New", Courier, monospace;
+  -webkit-font-smoothing: subpixel-antialiased;
+  /* Code doesn't look that good antialiased */
+}
+
+/*- GLOBAL HELPER CLASSES
+----------------------------------------------------------------------*/
+/* Nicer ampersand */
+/* line 188, ../sass/_base.scss */
+.amp {
+  font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Quick floating */
+/* line 196, ../sass/_base.scss */
+.alignleft {
+  float: left;
+}
+
+/* line 199, ../sass/_base.scss */
+.alignright {
+  float: right;
+}
+
+/* line 203, ../sass/_base.scss */
+.button, input[type="submit"], button {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -khtml-border-radius: 0.3em;
+  border-radius: 0.3em;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0.3em 1em;
+  cursor: pointer;
+}
+/* line 111, ../sass/_base.scss */
+.button:hover, input[type="submit"]:hover, button:hover {
+  text-decoration: none;
+}
+/* line 206, ../sass/_base.scss */
+.button.small, input[type="submit"].small, button.small {
+  font-size: .9em;
+  padding: 0 .7em;
+}
+
+/*- NON-SEMANTIC HELPER CLASSES
+----------------------------------------------------------------------*/
+/* Clearing stuff */
+/* line 219, ../sass/_base.scss */
+.clear {
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: -1px 0 0 0;
+}
+
+/* Clearfix hack. I'm extending this class with Sass, therefore it might look a bit messy below: */
+/* line 83, ../sass/_base.scss */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+/* line 91, ../sass/_base.scss */
+.clearfix {
+  display: inline-block;
+}
+/* line 92, ../sass/_base.scss */
+* html .clearfix {
+  height: 1%;
+}
+/* line 93, ../sass/_base.scss */
+.clearfix {
+  display: block;
+}
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+/* line 235, ../sass/_base.scss */
+.hidden {
+  display: none;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+/* line 240, ../sass/_base.scss */
+.visuallyhidden {
+  position: absolute;
+  left: -999em;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 246, ../sass/_base.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*	=MAIN
+----------------------------------------------------------------------*/
+/* line 4, ../sass/_main.scss */
+html {
+  /* Hater? Remove the line below then .. */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 10, ../sass/_main.scss */
+body {
+  font: normal 14px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #323232;
+  /* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
+  /* Example: */
+  width: 90%;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+/* line 23, ../sass/_main.scss */
+img::selection {
+  background: transparent;
+}
+
+/* line 26, ../sass/_main.scss */
+img::-moz-selection {
+  background: transparent;
+}
+
+/*	=LINKS
+----------------------------------------------------------------------*/
+/* line 34, ../sass/_main.scss */
+a {
+  -webkit-tap-highlight-color: white;
+  color: #3c75a3;
+}
+
+/*	=HEADINGS
+----------------------------------------------------------------------*/
+/* line 47, ../sass/_main.scss */
+h1 {
+  font-size: 1.984em;
+  line-height: 48px;
+}
+
+/* line 52, ../sass/_main.scss */
+h2 {
+  font-size: 1.226em;
+}
+
+/*	=HEADER
+----------------------------------------------------------------------*/
+/*	=FOOTER
+----------------------------------------------------------------------*/
+/*	=FORM STYLING
+----------------------------------------------------------------------*/
+/* Errors: */
+/* line 10, ../sass/partials/_forms.scss */
+.negative {
+  color: #cc0000;
+}
+
+/* Confirmations */
+/* line 17, ../sass/partials/_forms.scss */
+.positive {
+  color: green;
+}
+
+/*	=EXAMPLE HOME VIEW
+----------------------------------------------------------------------*/
+/*	=RESPONSIVE STYLES
+----------------------------------------------------------------------
+	
+	I highly encourage you to tailor these queries to fit your project.
+
+*/
+/* 
+	For iPhone 4 and high-def Android phones. Remember to use 'background-size' do define the original dimensions 
+
+*/
+/* 
+		TABLET LAYOUT
+			Or smaller screens. Define the 'max-width' to whatever.
+			
+		Inherits styles from: default layout
+
+--------------------------------------------------------------------------------- */
+/* 
+		MOBILE LAYOUT
+			
+		Inherits styles from: default layout	
+		
+--------------------------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+  /* line 50, ../sass/_responsive.scss */
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* line 57, ../sass/_responsive.scss */
+  .hide-mobile {
+    display: none;
+  }
+
+  /* line 61, ../sass/_responsive.scss */
+  pre {
+    white-space: normal;
+  }
+}
+/*
+
+	SMALL SCREEN LAYOUT
+		Like the iPhone in portrait mode
+	
+	Inherits styles from: mobile layout and default layout.
+
+--------------------------------------------------------------------------------- */
+/*	=PRINT STYLES
+----------------------------------------------------------------------*/

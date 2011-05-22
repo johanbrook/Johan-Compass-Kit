@@ -1,0 +1,89 @@
+/*	=RESPONSIVE STYLES
+----------------------------------------------------------------------
+	
+	I highly encourage you to tailor these queries to fit your project.
+
+*/
+
+
+/* 
+	For iPhone 4 and high-def Android phones. Remember to use 'background-size' do define the original dimensions 
+
+*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-device-pixel-ratio: 1.5){
+	
+}
+
+
+
+/* 
+		TABLET LAYOUT
+			Or smaller screens. Define the 'max-width' to whatever.
+			
+		Inherits styles from: default layout
+
+--------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) and (max-width: 979px){
+	
+	body{
+		
+		@if($DEBUG == true){
+			@include debugmessage("Tablet media query fired", "yellow");
+		}
+	}
+	
+	
+}
+
+
+
+/* 
+		MOBILE LAYOUT
+			
+		Inherits styles from: default layout	
+		
+--------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 767px) {
+	body{
+		@if($DEBUG == true){
+			@include debugmessage("Mobile media query fired", "silver");
+		}
+		-webkit-text-size-adjust: 100%;
+	}
+	
+	.hide-mobile{
+		display: none;
+	}
+	
+	pre{
+		white-space: normal;
+	}
+	
+}
+
+/*
+
+	SMALL SCREEN LAYOUT
+		Like the iPhone in portrait mode
+	
+	Inherits styles from: mobile layout and default layout.
+
+--------------------------------------------------------------------------------- */
+
+
+@media only screen and (max-width: 479px){
+	body{
+		
+		@if($DEBUG == true){
+			@include debugmessage("Small screen mobile media query fired", "red");
+		}
+	}
+	
+	
+}
+
+
+

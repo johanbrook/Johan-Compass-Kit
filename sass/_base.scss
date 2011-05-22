@@ -1,0 +1,248 @@
+/*	=UTILS
+----------------------------------------------------------------------*/
+
+
+// Config
+
+$legacy-support-for-ie6: 		false;
+$legacy-support-for-ie7: 		false;
+$experimental-support-for-svg: 	true;
+
+
+// Colors
+
+
+$accent: 		#3C75A3;		// Blue
+$comp: 			#274e84;		// Dark blue
+$highlight: 	#fff;			// For callouts, for example
+
+$bodycolor:		#323232;
+
+
+// Typography
+
+
+$serif: 		Georgia, "Times New Roman", serif;
+$sans: 			"Helvetica Neue", Helvetica, Arial, sans-serif;
+$monospaced: 	Monaco, "Courier New", Courier, monospace;
+
+
+$fontsize:		14px;
+
+$lineheight: 	24px;
+
+
+// Layout
+
+$page_width: 	980px;
+
+$square:		28px; 
+
+$column:		$square*2;
+
+
+// Imports
+
+@import "library/reset";
+@import "compass/css3";
+
+
+// Custom mixins
+
+
+@mixin debugmessage($message, $color: yellow){
+	&::before{
+		content: $message;
+		font-weight: bold;
+		display: block;
+		text-align: center;
+		background: #{$color};
+		position: absolute;
+		@include stretch($height: false);
+		z-index: 99;
+		top: 0;
+	}
+}
+
+
+@mixin stretch($height: true, $width: true){
+	position: absolute;
+	@if($height == true){
+		top: 0;
+		bottom: 0;
+	}
+	@if($width == true){
+		right: 0;
+		left: 0;
+	}
+}
+
+
+// A regular clearfix which can be applied directly in the CSS (no need for nasty HTML classes): "@include clearfix" on parent element.
+@mixin clearfix{
+	&:after{
+		visibility: hidden;
+     	display: block;
+	    font-size: 0;
+     	content: " ";
+     	clear: both;
+     	height: 0;	
+	}
+	& {display: inline-block;}
+	* html & {height: 1%;}
+	& {display: block;}
+}
+
+
+
+// Global button
+
+@mixin button{
+	$basecolor: #DCF1F5;
+	
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	@include border-radius(.3em);
+	font-weight: bold;
+	font-family: $sans;
+	padding: 0.3em 1em;
+	cursor: pointer;
+	
+	&:hover{
+		text-decoration: none;
+	}
+	&:active{
+		
+	}
+}
+
+
+
+// Functions
+
+// Really nifty function for responsive designing. Just use it like: 'width: make_fluid(308px)', and it'll return a percentage
+// based on the width of the container.
+
+@function make_fluid($number, $total: $page_width){
+	@return ($number / $total)*100%;
+}
+
+// Returns correctly formatted number of columns (based on the $column variable).
+// Example usage: 'width: make_fluid(get_columns(3))'
+
+@function get_columns($number){
+	@return ( ($column*$number) + ($square*($number - 1)) );
+}
+
+
+
+// Animations
+
+
+/*	=GLOBAL ANIMATIONS
+----------------------------------------------------------------------*/
+
+/* Reseting animation */
+@-webkit-keyframes reset {
+	0% 			{ opacity: 0;}
+	100% 		{ opacity: 0;}
+}
+
+
+
+
+/*- ELEMENT SETUP
+----------------------------------------------------------------------*/
+
+img {
+	max-width: 100%;
+	height: auto !important;
+}
+
+/* Make links 'clickable' */
+
+a:active, a:focus{
+	outline: none;
+	top: 1px;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	text-rendering: optimizeLegibility;		/* Fixes kerning. Watch out for some performance issues. */
+}
+
+
+pre, code{
+	font-family: $monospaced;
+	-webkit-font-smoothing: subpixel-antialiased;		/* Code doesn't look that good antialiased */
+}
+
+
+
+
+/*- GLOBAL HELPER CLASSES
+----------------------------------------------------------------------*/
+
+
+/* Nicer ampersand */
+.amp{
+	font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
+	font-size: 1.4em;
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* Quick floating */
+.alignleft{
+	float: left;
+}
+.alignright{
+	float: right;
+}
+
+.button, input[type="submit"], button{
+	@include button;
+	
+	&.small{
+		font-size: .9em;
+		padding: 0 .7em;
+	}
+}
+
+
+
+/*- NON-SEMANTIC HELPER CLASSES
+----------------------------------------------------------------------*/
+
+
+/* Clearing stuff */
+.clear{
+	clear: both; 
+	display: block; 
+	height: 1px; 
+	margin: -1px 0 0 0;
+}
+
+
+/* Clearfix hack. I'm extending this class with Sass, therefore it might look a bit messy below: */
+
+.clearfix{
+	@include clearfix;
+}
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+	display: none; 
+}
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden { 
+	position: absolute;   
+	left: -999em;
+}
+ 
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+	visibility: hidden; 
+}

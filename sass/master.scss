@@ -1,0 +1,28 @@
+/*----------------------------------------------------------------
+*
+*	STARTING POINT
+*
+*	Crafted by Johan Brook (http://johanbrook.com)
+*
+*	Using Sass (http://sass-lang.com) and Compass (http://compass-style.org)
+*
+*	Modular Scale  (http://modularscale.com/scale/?px1=14&px2=308&ra1=1.618&ra2=0)
+*	---------------------- 
+*	14px @ 1:1.618	 
+*	308px @ 1:1.618	
+*	----------------------
+*
+----------------------------------------------------------------*/
+
+// Set this variable to 'true' to enable debugging features
+$DEBUG: false;
+
+
+// "Config" file
+@import "base";
+
+// Main styles
+@import "main";
+
+@import "responsive";
+@import "print";

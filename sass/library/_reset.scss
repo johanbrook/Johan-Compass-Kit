@@ -1,0 +1,14 @@
+/* Imports the Meyer reset (the latest, for HTML5) */
+
+@import "compass/reset";
+
+/* Make some block elements relative: */
+
+div,section,article,figure,aside,hgroup,header,footer,nav,
+ul,ol,p,a,li,form{
+	position: relative;
+}
+
+strong			{font-weight: bold;}
+em				{font-style: italic;}
+small			{font-size: 80%;}
