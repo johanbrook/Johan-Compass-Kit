@@ -160,6 +160,9 @@ img {
 }
 
 /* Make links 'clickable' */
+a{
+	position: relative;
+}
 
 a:active, a:focus{
 	outline: none;
