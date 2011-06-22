@@ -4,13 +4,13 @@ My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compa
 
 # What?
 
-This is a collection of Sass files wrapped up in a nice structure to help me start off a new project in no time. 
+This is a drop-in collection of Sass files wrapped up in a nice structure to help me start off a new project in no time. 
 
-My Compass Kit is quite stripped – it mainly consists of handy variables, mixins, and functions. I created [Dyluni](https://github.com/johanbrook/dyluni) a while ago, but this is a Compass based version, with a bit cleaner approach.
+My Compass Kit is quite stripped – it mainly consists of handy variables, mixins, and functions. I created [Dyluni](https://github.com/johanbrook/dyluni) a while ago, but this is a Compass based version, with a bit cleaner approach. Its strength is the file structure: make sure that your Sass files are in order, just like the rest of your app/site. Don't Repeat Yourself, and Convention Over Configuration, etc. A pro tip is to give the Sass files in the `views` directory the same names as your app's views (the same goes for the partials). No more 'finding that special CSS section'.
 
 # Why?
 
-I'm fed up with copying and pasting code. I want to create. Fast. I believe in [DRY](http://en.wikipedia.org/wiki/DRY), and having a collection of Sass files around makes perfect sense.
+I'm fed up with copying and pasting code. I want to create. Fast. I believe in [DRY](http://en.wikipedia.org/wiki/DRY), and having a collection of Sass files around makes perfect sense. Every file in its place. If you separate the different sections of your site in nice modules, you could reuse the code in a flexible way later on.
 
 # How?
 
@@ -37,6 +37,27 @@ To have Compass watch your Sass file, and compile them on-the-fly:
 
 (`Ctrl + C` to abort).
 
+## Import scheme
+
+	master
+	- base
+		- library/reset
+		- compass/css3
+		
+	- main
+		- common
+			- common/buttons
+		- partials
+			- partials/header
+			- partials/footer
+			- partials/forms
+			
+		- views
+			- views/home
+			
+	- responsive
+	- print
+
 Compass compiles Sass files into CSS in development mode by default, so your CSS files will be uncompressed in development. Please see below ("Config" section) for quickly compiling for production. You're however able to [override this via the command line](http://compass-style.org/help/tutorials/command-line/).
 
 ### _base.scss
@@ -50,6 +71,10 @@ The main site file. In here you write your CSS. I recommend you to branch out yo
 ### _partials.scss
 
 Thanks to Sass' powerful `@import` command, you're able to pull in external files directly into your main files without extra HTTP requests. Therefore I've divided the header, footer, and form sections into separate files. They are imported into `_partials.scss`, which is imported into `_main.scs`. Prepend a "_" (underscore) to your partials.
+
+### _common.scss
+
+I've discovered that having some common elements in separate files are pretty good. It could be buttons, article styles, or other stuff that your *might* make use of in other places later on.
 
 ### _responsive.scss, _print.scss, and ie.scss
 
