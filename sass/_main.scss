@@ -58,6 +58,10 @@ h3{
 	
 }
 
+// Common
+
+@import "common";
+
 
 // Partials
 
@@ -66,5 +70,5 @@ h3{
 
 // Views
 
-@import "views/home";
+@import "views";
 

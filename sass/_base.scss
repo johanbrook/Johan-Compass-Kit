@@ -49,7 +49,6 @@ $column:		68px;
 
 // Custom mixins
 
-
 @mixin debugmessage($message, $color: yellow){
 	&::before{
 		content: $message;
@@ -92,30 +91,6 @@ $column:		68px;
 	* html & {height: 1%;}
 	& {display: block;}
 }
-
-
-
-// Global button
-
-@mixin button{
-	$basecolor: #DCF1F5;
-	
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	@include border-radius(.3em);
-	font-weight: bold;
-	font-family: $sans;
-	padding: 0.3em 1em;
-	cursor: pointer;
-	
-	&:hover{
-		text-decoration: none;
-	}
-	&:active{
-		
-	}
-}
-
 
 
 // Functions
@@ -203,14 +178,16 @@ pre, code{
 	float: right;
 }
 
-.button, input[type="submit"], button{
-	@include button;
-	
-	&.small{
-		font-size: .9em;
-		padding: 0 .7em;
-	}
+.center{
+	text-align: center;
 }
+.left{
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+
 
 
 
@@ -227,9 +204,9 @@ pre, code{
 }
 
 
-/* Clearfix hack. I'm extending this class with Sass, therefore it might look a bit messy below: */
+/* Clearfix hack */
 
-.clearfix{
+.group{
 	@include clearfix;
 }
 
