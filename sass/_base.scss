@@ -36,7 +36,7 @@ $lineheight: 	24px;
 
 $page_width: 	980px;
 
-$square:		16px; 
+$gutter:		16px; 
 
 $column:		68px;
 
@@ -106,7 +106,7 @@ $column:		68px;
 // Example usage: 'width: make_fluid(get_columns(3))'
 
 @function get_columns($number){
-	@return ( ($column*$number) + ($square*($number - 1)) );
+	@return ( ($column*$number) + ($gutter*($number - 1)) );
 }
 
 
@@ -131,7 +131,11 @@ $column:		68px;
 
 img {
 	max-width: 100%;
-	height: auto !important;
+	height: auto;
+	
+	&.noscale{
+		max-width: none;
+	}
 }
 
 /* Make links 'clickable' */
