@@ -4,6 +4,8 @@
 
 My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compass](http://compass-style.org).
 
+[Demo](http://johanbrook.com/compass-kit/index.html)
+
 # What?
 
 This is a drop-in collection of Sass files wrapped up in a nice structure to help me start off a new project in no time. 
