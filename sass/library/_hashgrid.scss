@@ -6,7 +6,7 @@
 #grid{
 
     /* Dimensions - same width as your grid with gutters (980px) */
-    width: $page_width + $square;
+    width: $page_width + $gutter*2;
 
     /* Grid (left-aligned)
     position: absolute;
@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    margin-left: -$page_width / 2 - ($square / 2);
+    margin-left: -#{$page_width / 2 + $gutter};
 	z-index: 999;
 
 }
@@ -32,12 +32,12 @@
 #grid div.vert{
 
     width: $column;
-    margin-left: $square;
+    margin-left: $gutter;
 
 	background-color: transparentize(green, 0.8);
 	
 	&.first-line{
-		margin-left: $square / 2 - 1px;
+		margin-left: $gutter - 1px;
 	}
 
 }
@@ -51,8 +51,8 @@
 #grid div.horiz{
 
     /* line height */
-    height: $lineheight - 1px;
-    border-bottom: 1px dotted darkgray;
+    height: $lineheight / 4;
+    border-bottom: 1px solid rgba(0,0,0, 0.2);
     margin: 0;
     padding: 0;
 
@@ -63,12 +63,12 @@
     /* Vertical grid line colour for grid 3 */
     border-color: #bfebff;
 	border-style: dotted;
-	width: $square - 1px;
+	width: $gutter - 1px;
 	border-width: 0 1px;
-	margin-left: $square - 1px;
+	margin-left: $gutter - 1px;
 	background-color: transparentize(#bfebff, 0.7);
 	
 	&.first-line{
-		margin-left: $square / 2 - 1px;
+		margin-left: $gutter / 2 - 1px;
 	}
 }

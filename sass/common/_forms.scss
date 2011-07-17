@@ -12,6 +12,9 @@ input[type="password"] {
 	@include box-sizing("border-box");
 }
 
+textarea{
+	resize: vertical;
+}
 
 /* Errors: */
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*----------------------------------------------------------------
 *
 *	STARTING POINT
@@ -15,98 +16,508 @@
 ----------------------------------------------------------------*/
 /*	=UTILS
 ----------------------------------------------------------------------*/
-/* MEYER RESET (HTML5) */
-/* line 17, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
+/* normalize.css 2011-07-12T10:51 UTC · http://github.com/necolas/normalize.css */
+/* =============================================================================
+   HTML5 element display
+   ========================================================================== */
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+/* line 20, ../sass/library/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ * Known limitation: IE6 will not apply style for 'audio[controls]'
+ */
+/* line 31, ../sass/library/_normalize.scss */
+audio[controls],
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
+ *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+ * 4. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+/* line 52, ../sass/library/_normalize.scss */
+html {
   font-size: 100%;
-  font: inherit;
+  /* 1 */
+  overflow-y: scroll;
+  /* 2 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 4 */
+  -ms-text-size-adjust: 100%;
+  /* 4 */
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+/* line 64, ../sass/library/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* 
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+/* line 76, ../sass/library/_normalize.scss */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+/* line 89, ../sass/library/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+/* line 99, ../sass/library/_normalize.scss */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+/* line 112, ../sass/library/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
+*/
+/* line 121, ../sass/library/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 125, ../sass/library/_normalize.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+/* line 133, ../sass/library/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+/* line 141, ../sass/library/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+/* line 154, ../sass/library/_normalize.scss */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+/* line 164, ../sass/library/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+/* 1 */
+/* line 177, ../sass/library/_normalize.scss */
+q {
+  quotes: none;
+}
+
+/* 2 */
+/* line 184, ../sass/library/_normalize.scss */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 189, ../sass/library/_normalize.scss */
+small {
+  font-size: 75%;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+/* line 199, ../sass/library/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
-  line-height: 1;
+/* line 206, ../sass/library/_normalize.scss */
+sup {
+  top: -0.5em;
 }
 
-/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
+/* line 210, ../sass/library/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+/* line 220, ../sass/library/_normalize.scss */
+ul,
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+/* line 225, ../sass/library/_normalize.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 230, ../sass/library/_normalize.scss */
+nav ul,
+nav ol {
   list-style: none;
 }
 
-/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+/* line 245, ../sass/library/_normalize.scss */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9 
+ */
+/* line 254, ../sass/library/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+/* line 267, ../sass/library/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+/* line 280, ../sass/library/_normalize.scss */
+form {
+  margin: 0;
+}
+
+/*
+ * Define consistent margin and padding
+ */
+/* line 288, ../sass/library/_normalize.scss */
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects alignment displayed oddly in IE6/7
+ */
+/* line 298, ../sass/library/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  *margin-left: -7px;
+  /* 2 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, F3/4, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+/* line 312, ../sass/library/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/*
+ * 1. Addresses FF3/4 setting line-height using !important in the UA stylesheet
+ * 2. Corrects inner spacing displayed oddly in IE6/7
+ */
+/* line 325, ../sass/library/_normalize.scss */
+button,
+input {
+  line-height: normal;
+  /* 1 */
+  *overflow: visible;
+  /* 2 */
+}
+
+/*
+ * Corrects overlap and whitespace issue for buttons and inputs in IE6/7
+ * Known issue: reintroduces inner spacing
+ */
+/* line 336, ../sass/library/_normalize.scss */
+table button,
+table input {
+  *overflow: auto;
+}
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ */
+/* line 348, ../sass/library/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/*
+ * Addresses box sizing set to content-box in IE8/9
+ */
+/* line 358, ../sass/library/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+}
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+/* line 367, ../sass/library/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Corrects inner padding displayed oddly in S5, Chrome on OSX
+ */
+/* line 378, ../sass/library/_normalize.scss */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Corrects inner padding and border displayed oddly in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+/* line 388, ../sass/library/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+/* line 398, ../sass/library/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/* 
+ * Remove most spacing between table cells
+ */
+/* line 412, ../sass/library/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
+/**
+*	Main grid container
+*/
+/* line 6, ../sass/library/_hashgrid.scss */
+#grid {
+  /* Dimensions - same width as your grid with gutters (980px) */
+  width: 1024px;
+  /* Grid (left-aligned)
+  position: absolute;
+  top: 0;
+  left: 0;
+  */
+  /* Grid (centered) */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -512px;
+  z-index: 999;
 }
 
-/* line 28, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
+/**
+ * Vertical grid lines
+ *
+ * Set the column width taking the borders into consideration,
+ * and use margins to set column gutters.
+ */
+/* line 32, ../sass/library/_hashgrid.scss */
+#grid div.vert {
+  width: 68px;
+  margin-left: 16px;
+  background-color: rgba(0, 128, 0, 0.2);
 }
-/* line 101, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 30, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 115, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+/* line 39, ../sass/library/_hashgrid.scss */
+#grid div.vert.first-line {
+  margin-left: 15px;
 }
 
-/* line 6, ../sass/library/_reset.scss */
-strong {
-  font-weight: bold;
+/**
+ * Horizontal grid lines, defined by your base line height
+ *
+ * Remember, the CSS properties that define the box model:
+ * visible height = height + borders + margins + padding
+ */
+/* line 51, ../sass/library/_hashgrid.scss */
+#grid div.horiz {
+  /* line height */
+  height: 5.25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0;
+  padding: 0;
 }
 
-/* line 7, ../sass/library/_reset.scss */
-em {
-  font-style: italic;
+/* line 61, ../sass/library/_hashgrid.scss */
+#grid.grid-2 div.vert {
+  /* Vertical grid line colour for grid 3 */
+  border-color: #bfebff;
+  border-style: dotted;
+  width: 15px;
+  border-width: 0 1px;
+  margin-left: 15px;
+  background-color: rgba(191, 235, 255, 0.3);
 }
-
-/* line 8, ../sass/library/_reset.scss */
-small {
-  font-size: .9em;
+/* line 71, ../sass/library/_hashgrid.scss */
+#grid.grid-2 div.vert.first-line {
+  margin-left: 7px;
 }
 
 /*	=GLOBAL ANIMATIONS
 ----------------------------------------------------------------------*/
 /* Reseting animation */
 @-webkit-keyframes reset {
-  /* line 122, ../sass/_base.scss */
+  /* line 123, ../sass/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 123, ../sass/_base.scss */
+  /* line 124, ../sass/_base.scss */
   100% {
     opacity: 0;
   }
@@ -114,44 +525,58 @@ small {
 
 /*- ELEMENT SETUP
 ----------------------------------------------------------------------*/
-/* line 132, ../sass/_base.scss */
+/* line 133, ../sass/_base.scss */
 img {
   max-width: 100%;
   height: auto;
 }
-/* line 136, ../sass/_base.scss */
+/* line 137, ../sass/_base.scss */
 img.noscale {
   max-width: none;
 }
 
 /* Make links 'clickable' */
-/* line 142, ../sass/_base.scss */
+/* line 143, ../sass/_base.scss */
 a {
   position: relative;
 }
 
-/* line 146, ../sass/_base.scss */
+/* line 147, ../sass/_base.scss */
 a:active, a:focus {
   outline: none;
   top: 1px;
 }
 
-/* line 152, ../sass/_base.scss */
+/* line 153, ../sass/_base.scss */
+th {
+  text-align: left;
+}
+
+/* line 158, ../sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   /* Fixes kerning. Watch out for some performance issues. */
   text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
 }
-/* line 156, ../sass/_base.scss */
+/* line 165, ../sass/_base.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit;
 }
 
-/* line 161, ../sass/_base.scss */
+/* line 170, ../sass/_base.scss */
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 175, ../sass/_base.scss */
 pre {
   overflow: auto;
 }
 
-/* line 165, ../sass/_base.scss */
+/* line 179, ../sass/_base.scss */
 pre, code {
   font-family: Monaco, "Courier New", Courier, monospace;
   /* Code doesn't look that good antialiased */
@@ -161,7 +586,7 @@ pre, code {
 /*- GLOBAL HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Nicer ampersand */
-/* line 179, ../sass/_base.scss */
+/* line 193, ../sass/_base.scss */
 .amp {
   font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
   font-size: 1.4em;
@@ -170,33 +595,33 @@ pre, code {
 }
 
 /* Quick floating */
-/* line 187, ../sass/_base.scss */
+/* line 201, ../sass/_base.scss */
 .alignleft {
   float: left;
 }
 
-/* line 190, ../sass/_base.scss */
+/* line 204, ../sass/_base.scss */
 .alignright {
   float: right;
 }
 
-/* line 193, ../sass/_base.scss */
+/* line 207, ../sass/_base.scss */
 .aligncenter {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 198, ../sass/_base.scss */
+/* line 212, ../sass/_base.scss */
 .center {
   text-align: center;
 }
 
-/* line 201, ../sass/_base.scss */
+/* line 215, ../sass/_base.scss */
 .left {
   text-align: left;
 }
 
-/* line 204, ../sass/_base.scss */
+/* line 218, ../sass/_base.scss */
 .right {
   text-align: right;
 }
@@ -204,7 +629,7 @@ pre, code {
 /*- NON-SEMANTIC HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Clearing stuff */
-/* line 216, ../sass/_base.scss */
+/* line 230, ../sass/_base.scss */
 .clear {
   clear: both;
   display: block;
@@ -213,7 +638,7 @@ pre, code {
 }
 
 /* Clearfix hack */
-/* line 82, ../sass/_base.scss */
+/* line 83, ../sass/_base.scss */
 .group:after {
   visibility: hidden;
   display: block;
@@ -222,35 +647,35 @@ pre, code {
   clear: both;
   height: 0;
 }
-/* line 90, ../sass/_base.scss */
+/* line 91, ../sass/_base.scss */
 .group {
   display: inline-block;
 }
-/* line 91, ../sass/_base.scss */
+/* line 92, ../sass/_base.scss */
 * html .group {
   height: 1%;
 }
-/* line 92, ../sass/_base.scss */
+/* line 93, ../sass/_base.scss */
 .group {
   display: block;
 }
 
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-/* line 232, ../sass/_base.scss */
+/* line 246, ../sass/_base.scss */
 .hidden {
   display: none;
 }
 
 /* Hide only visually, but have it available for screenreaders */
-/* line 237, ../sass/_base.scss */
+/* line 251, ../sass/_base.scss */
 .visuallyhidden {
   position: absolute;
   left: -999em;
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 243, ../sass/_base.scss */
+/* line 257, ../sass/_base.scss */
 .invisible {
   visibility: hidden;
 }
@@ -265,7 +690,7 @@ body {
   /* Example: */
   width: 90%;
   margin: 0 auto;
-  max-width: 980px;
+  max-width: 992px;
 }
 
 /* Text and image selection styling */
@@ -294,7 +719,7 @@ img::-moz-selection {
 /*	=LINKS
 ----------------------------------------------------------------------*/
 /* line 42, ../sass/_main.scss */
-a {
+a, a:visited {
   -webkit-tap-highlight-color: #e32980;
   color: #3c75a3;
 }
@@ -309,44 +734,46 @@ a:hover, a:focus {
 /* line 55, ../sass/_main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Grouped headings */
-/* line 62, ../sass/_main.scss */
+/* line 63, ../sass/_main.scss */
 hgroup {
   margin-bottom: 21px;
 }
-/* line 65, ../sass/_main.scss */
+/* line 66, ../sass/_main.scss */
 hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
   margin-bottom: 0;
 }
 
-/* line 70, ../sass/_main.scss */
+/* line 71, ../sass/_main.scss */
 h1 {
   font-size: 2.618em;
   line-height: 42px;
+  margin-bottom: 21px;
 }
 
-/* line 75, ../sass/_main.scss */
+/* line 77, ../sass/_main.scss */
 h2 {
   font-size: 1.984em;
   line-height: 42px;
 }
 
-/* line 81, ../sass/_main.scss */
+/* line 83, ../sass/_main.scss */
 h3 {
   font-size: 1.618em;
   margin-bottom: 10.5px;
 }
 
-/* line 86, ../sass/_main.scss */
+/* line 88, ../sass/_main.scss */
 h4 {
   font-size: 1.226em;
   margin-bottom: 5.25px;
 }
 
-/* line 91, ../sass/_main.scss */
+/* line 93, ../sass/_main.scss */
 h5 {
   font-size: 1.1em;
 }
@@ -377,14 +804,19 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
+/* line 15, ../sass/common/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
 /* Errors: */
-/* line 18, ../sass/common/_forms.scss */
+/* line 21, ../sass/common/_forms.scss */
 .negative {
   color: #cc0000;
 }
 
 /* Confirmations */
-/* line 25, ../sass/common/_forms.scss */
+/* line 28, ../sass/common/_forms.scss */
 .positive {
   color: green;
 }

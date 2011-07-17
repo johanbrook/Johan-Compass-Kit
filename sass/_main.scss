@@ -39,7 +39,7 @@ img::-moz-selection{
 /*	=LINKS
 ----------------------------------------------------------------------*/
 
-a{
+a, a:visited{
 	-webkit-tap-highlight-color: $highlight;
 	color: $accent;
 }
@@ -54,6 +54,7 @@ a:hover, a:focus{
 
 h1,h2,h3,h4,h5,h6{
 	font-family: $serif;
+	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -70,6 +71,7 @@ hgroup{
 h1{
 	font-size: 2.618em;
 	line-height: $lineheight*2;
+	margin-bottom: $lineheight;
 }
 
 h2{
