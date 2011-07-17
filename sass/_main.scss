@@ -1,12 +1,6 @@
 /*	=MAIN
 ----------------------------------------------------------------------*/
 
-html{
-	/* Hater? Remove the line below then .. */
-	-webkit-font-smoothing: antialiased;
-}
-
-
 body{
 	font: normal #{$fontsize}/#{$lineheight} $sans;
 	color: $bodycolor;	
@@ -20,12 +14,26 @@ body{
 }
 
 
+/* Text and image selection styling */
+
+::selection{
+	background: $highlight;
+	color: #fff;
+}
+::-moz-selection{
+	background: $highlight;
+	color: #fff;
+}
+
 img::selection{
 	background: transparent;
 }
 img::-moz-selection{
 	background: transparent;
 }
+
+
+
 
 
 /*	=LINKS
@@ -37,26 +45,53 @@ a{
 }
 
 a:hover, a:focus{
-	
+	color: saturate($accent, 20%);
 }
 
 
 /*	=HEADINGS
 ----------------------------------------------------------------------*/
 
+h1,h2,h3,h4,h5,h6{
+	font-family: $serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Grouped headings */
+
+hgroup{
+	margin-bottom: $lineheight;
+	
+	h1, h2, h3, h4, h5, h6{
+		margin-bottom: 0;
+	}
+}
+
 h1{
-	font-size: 1.984em;
+	font-size: 2.618em;
 	line-height: $lineheight*2;
 }
 
 h2{
-	font-size: 1.226em;
+	font-size: 1.984em;
+	line-height: $lineheight*2;
 }
 
 
 h3{
-	
+	font-size: 1.618em;
+	margin-bottom: $lineheight / 2;
 }
+
+h4{
+	font-size: 1.226em;
+	margin-bottom: $lineheight / 4;
+}
+
+h5{
+	font-size: 1.1em;
+}
+
 
 // Common
 

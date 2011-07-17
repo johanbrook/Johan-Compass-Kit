@@ -14,9 +14,9 @@ $experimental-support-for-svg: 	true;
 
 $accent: 		#3C75A3;		// Blue
 $comp: 			#274e84;		// Dark blue
-$highlight: 	#fff;			// For callouts, for example
+$highlight: 	#E32980;			// For callouts, for example
 
-$bodycolor:		#323232;
+$bodycolor:		#222;
 
 
 // Typography
@@ -29,7 +29,7 @@ $monospaced: 	Monaco, "Courier New", Courier, monospace;
 
 $fontsize:		14px;
 
-$lineheight: 	24px;
+$lineheight: 	21px;
 
 
 // Layout
@@ -158,6 +158,9 @@ h1, h2, h3, h4, h5, h6{
 	}
 }
 
+pre{
+	overflow: auto;
+}
 
 pre, code{
 	font-family: $monospaced;

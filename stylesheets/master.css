@@ -146,7 +146,12 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit;
 }
 
-/* line 162, ../sass/_base.scss */
+/* line 161, ../sass/_base.scss */
+pre {
+  overflow: auto;
+}
+
+/* line 165, ../sass/_base.scss */
 pre, code {
   font-family: Monaco, "Courier New", Courier, monospace;
   /* Code doesn't look that good antialiased */
@@ -156,7 +161,7 @@ pre, code {
 /*- GLOBAL HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Nicer ampersand */
-/* line 176, ../sass/_base.scss */
+/* line 179, ../sass/_base.scss */
 .amp {
   font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
   font-size: 1.4em;
@@ -165,33 +170,33 @@ pre, code {
 }
 
 /* Quick floating */
-/* line 184, ../sass/_base.scss */
+/* line 187, ../sass/_base.scss */
 .alignleft {
   float: left;
 }
 
-/* line 187, ../sass/_base.scss */
+/* line 190, ../sass/_base.scss */
 .alignright {
   float: right;
 }
 
-/* line 190, ../sass/_base.scss */
+/* line 193, ../sass/_base.scss */
 .aligncenter {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 195, ../sass/_base.scss */
+/* line 198, ../sass/_base.scss */
 .center {
   text-align: center;
 }
 
-/* line 198, ../sass/_base.scss */
+/* line 201, ../sass/_base.scss */
 .left {
   text-align: left;
 }
 
-/* line 201, ../sass/_base.scss */
+/* line 204, ../sass/_base.scss */
 .right {
   text-align: right;
 }
@@ -199,7 +204,7 @@ pre, code {
 /*- NON-SEMANTIC HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Clearing stuff */
-/* line 213, ../sass/_base.scss */
+/* line 216, ../sass/_base.scss */
 .clear {
   clear: both;
   display: block;
@@ -232,20 +237,20 @@ pre, code {
 
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-/* line 229, ../sass/_base.scss */
+/* line 232, ../sass/_base.scss */
 .hidden {
   display: none;
 }
 
 /* Hide only visually, but have it available for screenreaders */
-/* line 234, ../sass/_base.scss */
+/* line 237, ../sass/_base.scss */
 .visuallyhidden {
   position: absolute;
   left: -999em;
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 240, ../sass/_base.scss */
+/* line 243, ../sass/_base.scss */
 .invisible {
   visibility: hidden;
 }
@@ -253,15 +258,9 @@ pre, code {
 /*	=MAIN
 ----------------------------------------------------------------------*/
 /* line 4, ../sass/_main.scss */
-html {
-  /* Hater? Remove the line below then .. */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* line 10, ../sass/_main.scss */
 body {
-  font: normal 14px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #323232;
+  font: normal 14px/21px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222222;
   /* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
   /* Example: */
   width: 90%;
@@ -269,35 +268,87 @@ body {
   max-width: 980px;
 }
 
+/* Text and image selection styling */
+/* line 19, ../sass/_main.scss */
+::selection {
+  background: #e32980;
+  color: #fff;
+}
+
 /* line 23, ../sass/_main.scss */
+::-moz-selection {
+  background: #e32980;
+  color: #fff;
+}
+
+/* line 28, ../sass/_main.scss */
 img::selection {
   background: transparent;
 }
 
-/* line 26, ../sass/_main.scss */
+/* line 31, ../sass/_main.scss */
 img::-moz-selection {
   background: transparent;
 }
 
 /*	=LINKS
 ----------------------------------------------------------------------*/
-/* line 34, ../sass/_main.scss */
+/* line 42, ../sass/_main.scss */
 a {
-  -webkit-tap-highlight-color: white;
+  -webkit-tap-highlight-color: #e32980;
   color: #3c75a3;
+}
+
+/* line 47, ../sass/_main.scss */
+a:hover, a:focus {
+  color: #2677b9;
 }
 
 /*	=HEADINGS
 ----------------------------------------------------------------------*/
-/* line 47, ../sass/_main.scss */
-h1 {
-  font-size: 1.984em;
-  line-height: 48px;
+/* line 55, ../sass/_main.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 52, ../sass/_main.scss */
+/* Grouped headings */
+/* line 62, ../sass/_main.scss */
+hgroup {
+  margin-bottom: 21px;
+}
+/* line 65, ../sass/_main.scss */
+hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
+  margin-bottom: 0;
+}
+
+/* line 70, ../sass/_main.scss */
+h1 {
+  font-size: 2.618em;
+  line-height: 42px;
+}
+
+/* line 75, ../sass/_main.scss */
 h2 {
+  font-size: 1.984em;
+  line-height: 42px;
+}
+
+/* line 81, ../sass/_main.scss */
+h3 {
+  font-size: 1.618em;
+  margin-bottom: 10.5px;
+}
+
+/* line 86, ../sass/_main.scss */
+h4 {
   font-size: 1.226em;
+  margin-bottom: 5.25px;
+}
+
+/* line 91, ../sass/_main.scss */
+h5 {
+  font-size: 1.1em;
 }
 
 /*	=BUTTON STYLES
@@ -344,16 +395,16 @@ input[type="password"] {
 ----------------------------------------------------------------------*/
 /*	=EXAMPLE HOME VIEW
 ----------------------------------------------------------------------*/
+/* line 7, ../sass/views/_home.scss */
+.home section {
+  margin-bottom: 63px;
+}
+
 /*	=RESPONSIVE STYLES
 ----------------------------------------------------------------------
 	
-	I highly encourage you to tailor these queries to fit your project.
-
-*/
-/* 
-	For iPhone 4 and high-def Android phones. Remember to use 'background-size' do define the original dimensions 
-
-*/
+	I highly encourage you to tailor these queries to fit your project. */
+/* For iPhone 4 and high-def Android phones. Remember to use 'background-size' do define the original dimensions  */
 /* 
 		TABLET LAYOUT
 			Or smaller screens. Define the 'max-width' to whatever.
@@ -368,17 +419,17 @@ input[type="password"] {
 		
 --------------------------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
-  /* line 50, ../sass/_responsive.scss */
+  /* line 45, ../sass/_responsive.scss */
   body {
     -webkit-text-size-adjust: 100%;
   }
 
-  /* line 57, ../sass/_responsive.scss */
+  /* line 52, ../sass/_responsive.scss */
   .hide-mobile {
     display: none;
   }
 
-  /* line 61, ../sass/_responsive.scss */
+  /* line 56, ../sass/_responsive.scss */
   pre {
     white-space: normal;
   }
