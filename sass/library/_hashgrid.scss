@@ -51,7 +51,7 @@
 #grid div.horiz{
 
     /* line height */
-    height: $lineheight / 4;
+    height: ceil($lineheight / 4 - 1px);
     border-bottom: 1px solid rgba(0,0,0, 0.2);
     margin: 0;
     padding: 0;

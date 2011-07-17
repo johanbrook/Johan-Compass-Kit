@@ -1,14 +1,21 @@
-/*	=MAIN
+/*	=MAIN CSS FILE
+	
+	Put all *main* site styles here. Use @imports.
 ----------------------------------------------------------------------*/
 
+html{
+	background-color: #fff;
+	height: 100%;
+}
+
 body{
-	font: normal #{$fontsize}/#{$lineheight} $sans;
+	font: normal #{$fontsize}/#{$lineheight} $serif;
 	color: $bodycolor;	
 	
 	/* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
 	
 	/* Example: */
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 	max-width: $page_width;
 }
@@ -39,7 +46,7 @@ img::-moz-selection{
 /*	=LINKS
 ----------------------------------------------------------------------*/
 
-a, a:visited{
+a {
 	-webkit-tap-highlight-color: $highlight;
 	color: $accent;
 }
@@ -68,31 +75,61 @@ hgroup{
 	}
 }
 
+/* Sub headings, in a hgroup for instance */
+
+.sub{
+	color: #888;
+	font-style: italic;
+}
+
+
 h1{
 	font-size: 2.618em;
 	line-height: $lineheight*2;
 	margin-bottom: $lineheight;
+	
+	&.huge{
+		font-size: 4.236em;
+		line-height: $lineheight*3;
+	}
 }
 
 h2{
 	font-size: 1.984em;
 	line-height: $lineheight*2;
+	margin-bottom: ceil($lineheight / 2);
 }
 
 
 h3{
 	font-size: 1.618em;
-	margin-bottom: $lineheight / 2;
+	margin-bottom: ceil($lineheight / 2);
 }
 
 h4{
 	font-size: 1.226em;
-	margin-bottom: $lineheight / 4;
+	margin-bottom: ceil($lineheight / 4);
 }
 
 h5{
 	font-size: 1.1em;
 }
+
+
+/*	=MISC ELEMENTS
+----------------------------------------------------------------------*/
+
+pre{
+	background-color: #eee;
+	padding: ceil($lineheight / 4) $gutter;
+}
+
+
+blockquote{
+	font-family: $serif;
+	font-size: 1.1em;
+}
+
 
 
 // Common
@@ -102,10 +139,12 @@ h5{
 
 // Partials
 
-@import "partials";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/post";
 
 
 // Views
 
-@import "views";
+@import "views/home";
 

@@ -6,6 +6,32 @@
 .button,
 input[type="submit"],
 input[type="button"],
+input[type="reset"],
 button {
+	$basecolor: $accent;
+	
 	display: inline-block;
+	@include background($basecolor linear-gradient(lighten($basecolor, 10%), $basecolor));
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	font: bold 1.1em/#{$lineheight + 6px} $sans;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: rgba(0,0,0, 0.2) 0 1px 0;
+	padding: 0 .5em;
+	@include border-radius(.3em);
+	@include box-shadow(
+		rgba(0,0,0, 0.1) 0 0 3px,
+		inset rgba(255,255,255, 0.1) 0 1px 0
+	);
+	border: 1px solid $basecolor;
+	
+	&:hover{
+		color: #fff;
+	}
+	&:active{
+		background-image: none;
+		top: auto;
+		text-shadow: none;
+	}
 }

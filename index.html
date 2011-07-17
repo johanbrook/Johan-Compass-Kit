@@ -3,18 +3,160 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Johan's Compass Kit Test Case</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Johan Brook" />
 		<link rel="stylesheet" href="stylesheets/master.css" type="text/css" media="all" charset="utf-8" />
 	</head>
 	
 	<body class="home">
 		
 		 <header>
-            <hgroup>
-                <h1>Grouped Heading 1</h1>
-                <h2>Grouped Heading 2</h2>
+            <hgroup class="center">
+                <h1 class="huge">Johan's Compass Kit</h1>
+                <h2 class="sub">A style guide</h2>
             </hgroup>
 
+			<p class="center">
+				<a class="button" href="https://github.com/johanbrook/Johan-Compass-Kit">Download or View at GitHub →</a>
+				<br /><small class="meta">or read more below …</small>
+			</p>
 		</header>
+		
+		
+		<section role="main">
+			<h1>Since I don't like other people's code …</h1>
+			
+			<p>
+				Please misunderstand the heading. Other people's code is great, but I prefer to assemble my own HTML and CSS boilerplate. There are great projects out there, like the HTML5 Boilerplate, Skeleton, and LESS Framework; but I really can't just drop in their markup and CSS into my projects without a thorough investigation and reverse-engineering session first. Therefore I've created this personal toolbox of mine, which I always use when I start off a new project.
+			</p>
+			
+			<h2>What is this?</h2>
+			<p>
+				This 'Compass Kit' of mine is a <strong>fluid, responsive, boilerplate in HTML and CSS, built with Compass and Sass</strong>. It evolved from my personal work and laziness – who has time to completely rebuild the boilerplate HTML and CSS for every project? Summary: this is my personal toolbox, and the code may change due to my mood, industry advice, and by plain obsessive compulsive refactoring. I usually drop this package into newly created projects, adjust and set some site specific variables, perhaps remove stuff I don't need, and start building.
+			</p>
+			
+			<p>
+				Thanks to my obsessive eagerness to collect all the web development world's best practices, this kit includes up-to-date cutting edge stuff, as well as responsible fallbacks for older browsers. Progressive enhancements – oh yeah.
+				
+			</p>
+			
+			<p>
+				This kit includes <strong>as few CSS classes and static values as possible</strong>. It's not up to me to decide how you organize your CSS. I personally hate it when a CSS framework dictates everything, and I end up deleting tens of lines of code just because I don't need it. This kit <strong>doesn't get in your way</strong>, and even includes the <a href="http://necolas.github.com/normalize.css/">Normalize.css</a> CSS reset instead of a regular shotgun reset. Thanks to Normalize.css, we get a nice cross-browser and consistent markup environment instead of hard reseting all elements.
+			</p>
+			
+			<h2>Compass &amp; Sass</h2>
+			<p>
+				There's one thing different with this package though: it's built with <a href="http://sass-lang.com">Sass</a> and <a href="http://compass-style.org">Compass</a>. You should start use those technologies right now. It's like CSS4, but available for us to use today. Please study the Compass reference for tons of ways to use the tool. I'm sure you'll find a couple of nifty solution in this package's code. For a quick walkthrough, check out the <a href="https://github.com/johanbrook/Johan-Compass-Kit">readme on GitHub</a>.
+			</p>
+			
+			<h3>What's in the box?</h3>
+			<ul>
+				<li>Great typography setup based on a modular, golden, scale (<a href="http://modularscale.com/scale/?px1=14&px2=308&ra1=1.618&ra2=0">reference table</a>)</li>
+				
+				<li>Handy Sass mixins</li>
+				<li>Organized file structure (see below)</li>
+				<li>Helper classes, and more.</li>
+			</ul>
+			
+			<h3>Modularity</h3>
+			<p>
+				I hate messy CSS files. However, Sass provides the <code>@import</code> construct, where we can import a CSS or Sass file into another Sass file, without using more HTTP requests. It's great. Take a look at the directory structure in the GitHub repo: it really is a "each file in its own place" philosophy:
+				
+			</p>
+			
+			<div class="group">
+				
+			<figure class="column third">
+				<pre>
+/sass
+	master
+	ie
+	_base
+	_main
+	_common
+	/common
+		_buttons
+		_columns
+		_forms
+		_meta
+		
+	/partials
+		_footer
+		_header
+		_post
+	
+	/views
+		_home
+		
+	/library
+		_normalize
+		_hashgrid
+		
+	_print
+	_responsive
+
+/stylesheets
+	ie.css
+	master.css
+			</pre>
+			<figcaption>The file structure of my Compass Kit</figcaption>
+			
+			</figure>
+			
+			<p>
+				See what's going on to the left? If you do, I know I've done this right. Each file in its own place. Feel free to come up with your own organization. I've found this structure quite neat – separating the CSS code into modules is sooo good. All of the files in the <code>sass</code> folder compiles into a single <code>master.css</code> file. Awesome. 
+			</p>
+			
+			<p>
+				The goal of a file strucure like this is when you're looking for a specific selector, you should just <em>know</em> where that is located. It <em>shouldn't</em> have to take you more than a couple of seconds to look that up.
+			</p>
+			
+			
+			<h2>Quick &amp; Dirty</h2>
+			<p>
+				What follows is all commonly used HTML elements (including the ones in defined in HTML5) listed, for rapid testing and experimenting. I've included the Javascript tool <a href="http://hashgrid.com">Hashgrid</a> which lets you define grid overlays to make sure everything line up. Try it out by pressing and holding '<kbd>G</kbd>' on your keyboard. This <strong>12</strong> column grid has a <strong>24 px baseline</strong> and is <strong>992px</strong> wide. This makes every column <strong>68px wide</strong> and the gutters <strong>16px</strong> Measurements may be adjusted in the files <code>_base.scss</code> and <code>library/_hashgrid.scss</code> – it's completely up to you. Thanks to the variables in Sass, there are no hardcoded widths in my boilerplate. 
+			
+			</p>
+			
+
+			<h2>Outro</h2>
+			
+			<p>
+				I really don't have the time to build one of these fancy promo sites for this boilerplate package. As I mentioned: this is primarly for myself. If you want it, it's in a <a href="https://github.com/johanbrook/Johan-Compass-Kit">GitHub repo</a> (you can clone or download over there). The included <a href="https://github.com/johanbrook/Johan-Compass-Kit/blob/master/README.md">Readme</a> should provide enough intel to get you off the ground. 
+			</p>
+			
+			<p>
+				There are no crazy CSS class names to keep in mind, just a couple of helper classes. The best way to learn is actually to study the code – not reading some abstract readme – so dive in! Study the import scheme, the variables, the custom mixins. You'll like it.
+			</p>
+			
+			<h3>Suggestions? Praise? Hate?</h3>
+			<p>
+				Drop me a line on <a href="http://twitter.com" title="@johanbrook">my Twitter</a> and/or fork the project and submit a pull request.
+			</p>
+			
+			</div>
+			
+			<h2>Acknowledgements</h2>
+			
+			<p>Projects which have inspired:</p>
+			
+			<ul>
+				<li>HTML5 Boilerplate</li>
+				<li>Skeleton</li>
+				<li>Normalize.css</li>
+				<li>LESS Framework</li>
+				<li class="meta">&lt;other HTML and CSS "frameworks" from the dodgy parts of the internet&gt;</li>
+			</ul>
+			
+			<p>
+				<small>The original test markup on this page is borrowed from Nicolas Gallagher and Jonathan Neal's <a href="http://necolas.github.com/normalize.css/">Normalize.css project</a>. Hat tips to you. I recommend you run you CSS through this test case to ensure harmonic sizes and styles.</small>
+			</p>
+			
+			<h3>License</h3>
+			<p>Licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.</p>
+		</section>
+		
+		<hr />
 				
 		<section>
 	        <h1>Heading 1 &lt;h1&gt;</h1>
@@ -28,20 +170,56 @@
 		
 		
         <section>
-            <h1>Section Heading 1</h1>   
-         
-            <article>
-                <h2>Article Heading 2</h2>
-                <small><time datetime="2011-07-20T00:00:00" pubdate>July 20<sup>th</sup>, 2011</time></small>
+            <article role="article">
+                <h1>Article Heading 2</h1>
+                <small class="meta"><time datetime="2011-07-20T00:00:00" pubdate>July 20<sup>th</sup>, 2011</time></small>
                 <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
 
 				<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops</p>
             </article>
         </section>
 
+		<section>
+			<h1>Columns</h1>
+			
+			<p class="meta">(press and hold '<kbd>G</kbd>' on your keyboard to view the 12 column grid)</p>
+			
+			<div class="group">
+  			
+	  			<div class="column half">
+	  				<h2>One half</h2>
+	  				<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+	  			</div>
+  			
+	  			<div class="column half last">
+	  				<h2>One half</h2>
+	  				<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops</p>
+	  			</div>
+  			
+			</div>
+			
+			<div class="group">
+				<div class="column third">
+					<h3>A third</h3>
+					<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+				</div>
+				
+				<div class="column third">
+					<h3>A third</h3>
+					<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+				</div>
+				
+				<div class="column third last">
+					<h3>A third</h3>
+					<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+				</div>
+				
+			</div>
+		
+		</section>
 
 		<section>
-		        <h1>Text-level semantics</h1>
+		        <h1>Typographic test case</h1>
 
 		        <p>
 		        The <a href="#">a element</a> example<br>
@@ -74,10 +252,6 @@
 		<section>
 		        <h1>Embedded content</h1>
 
-		        <h2>Audio</h2>
-
-		        <audio controls></audio>
-		        <audio></audio>
 
 		        <h2>Images</h2>
 
@@ -88,18 +262,15 @@
 
 		        <svg style="width:100px; height:100px;"><circle cx="100" cy="100" r="100" fill="#ff0000"></svg>        
 
-		        <h2>Video</h2>
-
-		        <video controls></video>
-		        <video></video>
+	
 	</section>
 	
 	<section>
 		        <h1>Grouping content</h1>
 
-		        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+		        <p>Lorem ipsum dolor sit amet, <code>some inline code</code> consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
 
-		        <h3>pre</h3>
+		        <h2>Preformatted text and Code blocks</h2>
 
 		        <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
 
@@ -281,39 +452,6 @@
 		                <p><button type="reset">Reset (button)</button></p>
 		                <p><button type="button">Button (button)</button></p>
 		                <p><button type="submit">Submit (button)</button></p>
-		            </fieldset>
-
-		            <fieldset id="boxsize">
-		                <legend>box-sizing tests</legend>
-		                <div><input type="text" value="text"></div>
-		                <div><input type="email" value="email"></div>
-		                <div><input type="search" value="search"></div>
-		                <div><input type="url" value="http://"></div>
-		                <div><input type="password" value="password"></div>
-
-		                <div><input type="color" value="color"></div>
-		                <div><input type="number" value="number"></div>
-		                <div><input type="range" value="range"></div>
-		                <div><input type="date" value="date"></div>
-		                <div><input type="month" value="month"></div>
-		                <div><input type="week" value="week"></div>
-		                <div><input type="datetime" value="datetime"></div>
-		                <div><input type="datetime-local" value="datetime-local"></div>
-
-		                <div><input type="radio"></div>
-		                <div><input type="checkbox"></div>
-
-		                <div><select><option>Option 01</option><option>Option 02</option></select></div>
-		                <div><textarea cols="30" rows="5" >Textarea text</textarea></div>
-
-		                <div><input type="image" src="http://placekitten.com/90/24" alt="Image (input)"></div>
-		                <div><input type="reset" value="Reset (input)"></div>
-		                <div><input type="button" value="Button (input)"></div>
-		                <div><input type="submit" value="Submit (input)"></div>
-
-		                <div><button type="reset">Reset (button)</button></div>
-		                <div><button type="button">Button (button)</button></div>
-		                <div><button type="submit">Submit (button)</button></div>
 		            </fieldset>
 		        </form>
 		</section>

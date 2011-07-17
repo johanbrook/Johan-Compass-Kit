@@ -2,10 +2,30 @@
 ----------------------------------------------------------------------*/
 
 
+/* Temporary styles for the demo page. Feel free to remove. */
+
 .home{
+	padding-top: $lineheight*2;
 	
-	section{
+	figcaption{
+		font-family: $sans;
+		color: #777;
+	}
+	
+	section, hgroup{
 		margin-bottom: $lineheight*3;
+	}
+	
+	#intro{
+		margin: 0 auto;
+	}
+	
+	.group{
+		margin-bottom: $lineheight*2;
+	}
+	
+	p{
+		margin-bottom: $lineheight;
 	}
 	
 }

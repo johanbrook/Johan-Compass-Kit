@@ -1,4 +1,4 @@
-/*	=UTILS
+/*	=UTILS AND BASE CONFIGURATION
 ----------------------------------------------------------------------*/
 
 
@@ -12,9 +12,9 @@ $experimental-support-for-svg: 	true;
 // Colors
 
 
-$accent: 		#3C75A3;		// Blue
-$comp: 			#274e84;		// Dark blue
-$highlight: 	#E32980;			// For callouts, for example
+$accent: 		darken(#298FE3, 10%);		// Blue
+$comp: 			lighten(yellow, 30%);		// Dark blue
+$highlight: 	#E32980;					// For callouts, for example
 
 $bodycolor:		#222;
 
@@ -27,9 +27,9 @@ $sans: 			"Helvetica Neue", Helvetica, Arial, sans-serif;
 $monospaced: 	Monaco, "Courier New", Courier, monospace;
 
 
-$fontsize:		14px;
+$fontsize:		15px;
 
-$lineheight: 	21px;
+$lineheight: 	24px;
 
 
 // Layout
@@ -59,7 +59,7 @@ $column:		68px;
 		background: #{$color};
 		position: absolute;
 		@include stretch($height: false);
-		z-index: 99;
+		z-index: 999;
 		top: 0;
 	}
 }
@@ -149,9 +149,30 @@ a:active, a:focus{
 	top: 1px;
 }
 
-
+/* Make table headings align left */
 th{
 	text-align: left;
+}
+
+
+/* Emphasize the kbd element */
+kbd{
+	font-family: $sans;
+	font-weight: bolder;
+}
+
+del{
+	color: #666;
+}
+
+/* Style the hr element */
+
+hr{
+	border: 0;
+	height: 1px;
+	background-color: #e2e2e2;
+	width: 100%;
+	margin: $lineheight*2 auto $lineheight*2 - 1px;
 }
 
 
@@ -188,7 +209,6 @@ pre, code{
 /*- GLOBAL HELPER CLASSES
 ----------------------------------------------------------------------*/
 
-
 /* Nicer ampersand */
 .amp{
 	font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
@@ -220,6 +240,20 @@ pre, code{
 }
 
 
+/* List styles */
+
+ul.bulleted{
+	list-style-type: disc;
+}
+ul.squared{
+	list-style-type: square;
+}
+
+ol.outside,
+ul.outside{
+	list-style-position: outside;
+	padding-left: 0;
+}
 
 
 /*- NON-SEMANTIC HELPER CLASSES

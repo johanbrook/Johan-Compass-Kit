@@ -1,0 +1,24 @@
+/*	=COLUMNS
+----------------------------------------------------------------------*/
+
+/* A single column element */
+.column{
+	float: left;
+	margin-right: make_fluid($gutter);
+	
+	/* The last in a row */
+	&.last{
+		margin-right: 0;
+	}
+	
+}
+
+
+/* Span half of the site's width */
+.half, .six-cols{
+	width: floor(make_fluid(get_columns(6)));
+}
+
+.third, .four-cols{
+	width: floor(make_fluid(get_columns(4)));
+}

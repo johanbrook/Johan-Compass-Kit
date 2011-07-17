@@ -1,5 +1,8 @@
 /*! normalize.css 2011-07-12T10:51 UTC · http://github.com/necolas/normalize.css */
 
+/* Modified by Johan Brook, 2011-07-17 */
+
+
 /* =============================================================================
    HTML5 element display
    ========================================================================== */
@@ -188,7 +191,7 @@ q:after {
 }
 
 small {
-    font-size: 75%;
+    font-size: 85%;
 }
 
 /*
@@ -219,16 +222,18 @@ sub {
 
 ul,
 ol {
-    margin: $lineheight / 2 0;
+    margin: 0 0 $lineheight;
 }
 
-dd {
-    margin: 0 0 0 $lineheight;
+dd{
+	margin-bottom: $lineheight;
 }
+
 
 nav ul,
 nav ol {
     list-style: none;
+	padding: 0;
 }
 
 
@@ -300,6 +305,12 @@ legend {
     *margin-left: -7px; /* 2 */
 }
 
+
+label{
+	cursor: pointer;
+}
+
+
 /*
  * 1. Corrects font size not being inherited in all browsers
  * 2. Addresses margins set differently in IE6/7, F3/4, S5, Chrome
@@ -310,7 +321,7 @@ button,
 input,
 select,
 textarea {
-    font-size: 99%; /* 1 */
+    font-size: 100%; /* 1 */
     margin: 0; /* 2 */
     vertical-align: baseline; /* 3 */
     *vertical-align: middle; /* 3 */

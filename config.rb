@@ -19,7 +19,7 @@ output_style = (environment == :production) ? :compressed : :expanded
 # relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-line_comments = (environment == :production) ? false : true
+line_comments = false
 
 # Don't append query strings ('?2011051020102') to assets:
 asset_cache_buster :none

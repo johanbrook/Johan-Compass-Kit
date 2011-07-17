@@ -14,16 +14,16 @@
 *	----------------------
 *
 ----------------------------------------------------------------*/
-/*	=UTILS
+/*	=UTILS AND BASE CONFIGURATION
 ----------------------------------------------------------------------*/
 /* normalize.css 2011-07-12T10:51 UTC · http://github.com/necolas/normalize.css */
+/* Modified by Johan Brook, 2011-07-17 */
 /* =============================================================================
    HTML5 element display
    ========================================================================== */
 /*
  * Corrects block display not defined in IE6/7/8/9 & FF3
  */
-/* line 20, ../sass/library/_normalize.scss */
 article,
 aside,
 details,
@@ -41,7 +41,6 @@ section {
  * Corrects inline-block display not defined in IE6/7/8/9 & FF3
  * Known limitation: IE6 will not apply style for 'audio[controls]'
  */
-/* line 31, ../sass/library/_normalize.scss */
 audio[controls],
 canvas,
 video {
@@ -62,7 +61,6 @@ video {
  * 4. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
-/* line 52, ../sass/library/_normalize.scss */
 html {
   font-size: 100%;
   /* 1 */
@@ -79,7 +77,6 @@ html {
 /*
  * Addresses margins handled incorrectly in IE6/7
  */
-/* line 64, ../sass/library/_normalize.scss */
 body {
   margin: 0;
 }
@@ -87,7 +84,6 @@ body {
 /* 
  * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
-/* line 76, ../sass/library/_normalize.scss */
 body,
 button,
 input,
@@ -102,7 +98,6 @@ textarea {
 /*
  * Addresses outline displayed oddly in Chrome
  */
-/* line 90, ../sass/library/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -111,7 +106,6 @@ a:focus {
  * Improves readability when focused and also mouse hovered in all browsers
  * people.opera.com/patrickl/experiments/keyboard/test
  */
-/* line 100, ../sass/library/_normalize.scss */
 a:hover,
 a:active {
   outline: 0;
@@ -123,7 +117,6 @@ a:active {
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
-/* line 113, ../sass/library/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -131,21 +124,18 @@ abbr[title] {
 /*
  * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
 */
-/* line 122, ../sass/library/_normalize.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 126, ../sass/library/_normalize.scss */
 blockquote {
-  margin: 10.5px 2em;
+  margin: 12px 2em;
 }
 
 /*
  * Addresses styling not present in S5, Chrome
  */
-/* line 134, ../sass/library/_normalize.scss */
 dfn {
   font-style: italic;
 }
@@ -153,9 +143,8 @@ dfn {
 /*
  * Addresses styling not present in IE6/7/8/9
  */
-/* line 142, ../sass/library/_normalize.scss */
 mark {
-  background: #274e84;
+  background: #ffff99;
   color: #000;
 }
 
@@ -163,7 +152,6 @@ mark {
  * Corrects font family set oddly in IE6, S5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
-/* line 155, ../sass/library/_normalize.scss */
 pre,
 code,
 kbd,
@@ -176,7 +164,6 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers
  */
-/* line 165, ../sass/library/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -188,29 +175,25 @@ pre {
  * 2. Addresses quote property not supported in S4
  */
 /* 1 */
-/* line 178, ../sass/library/_normalize.scss */
 q {
   quotes: none;
 }
 
 /* 2 */
-/* line 185, ../sass/library/_normalize.scss */
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
-/* line 190, ../sass/library/_normalize.scss */
 small {
-  font-size: 75%;
+  font-size: 85%;
 }
 
 /*
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-/* line 200, ../sass/library/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -219,12 +202,10 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 207, ../sass/library/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 211, ../sass/library/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -232,21 +213,19 @@ sub {
 /* =============================================================================
    Lists
    ========================================================================== */
-/* line 221, ../sass/library/_normalize.scss */
 ul,
 ol {
-  margin: 10.5px 0;
+  margin: 0 0 24px;
 }
 
-/* line 225, ../sass/library/_normalize.scss */
 dd {
-  margin: 0 0 0 21px;
+  margin-bottom: 24px;
 }
 
-/* line 230, ../sass/library/_normalize.scss */
 nav ul,
 nav ol {
   list-style: none;
+  padding: 0;
 }
 
 /* =============================================================================
@@ -257,7 +236,6 @@ nav ol {
  * 2. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
-/* line 245, ../sass/library/_normalize.scss */
 img {
   border: 0;
   /* 1 */
@@ -268,7 +246,6 @@ img {
 /*
  * Corrects overflow displayed oddly in IE9 
  */
-/* line 254, ../sass/library/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -279,7 +256,6 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE6/7/8/9, S5, O11
  */
-/* line 267, ../sass/library/_normalize.scss */
 figure {
   margin: 0;
 }
@@ -290,7 +266,6 @@ figure {
 /*
  * Corrects margin displayed oddly in IE6/7
  */
-/* line 280, ../sass/library/_normalize.scss */
 form {
   margin: 0;
 }
@@ -298,17 +273,15 @@ form {
 /*
  * Define consistent margin and padding
  */
-/* line 288, ../sass/library/_normalize.scss */
 fieldset {
   margin: 0 3px;
-  padding: 5.25px 8px 10.5px;
+  padding: 6px 8px 12px;
 }
 
 /*
  * 1. Corrects color not being inherited in IE6/7/8/9
  * 2. Corrects alignment displayed oddly in IE6/7
  */
-/* line 298, ../sass/library/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -316,17 +289,20 @@ legend {
   /* 2 */
 }
 
+label {
+  cursor: pointer;
+}
+
 /*
  * 1. Corrects font size not being inherited in all browsers
  * 2. Addresses margins set differently in IE6/7, F3/4, S5, Chrome
  * 3. Improves appearance and consistency in all browsers
  */
-/* line 312, ../sass/library/_normalize.scss */
 button,
 input,
 select,
 textarea {
-  font-size: 99%;
+  font-size: 100%;
   /* 1 */
   margin: 0;
   /* 2 */
@@ -340,7 +316,6 @@ textarea {
  * 1. Addresses FF3/4 setting line-height using !important in the UA stylesheet
  * 2. Corrects inner spacing displayed oddly in IE6/7
  */
-/* line 325, ../sass/library/_normalize.scss */
 button,
 input {
   line-height: normal;
@@ -353,7 +328,6 @@ input {
  * Corrects overlap and whitespace issue for buttons and inputs in IE6/7
  * Known issue: reintroduces inner spacing
  */
-/* line 336, ../sass/library/_normalize.scss */
 table button,
 table input {
   *overflow: auto;
@@ -363,7 +337,6 @@ table input {
  * 1. Improves usability and consistency of cursor style between image-type 'input' and others
  * 2. Corrects inability to style clickable 'input' types in iOS
  */
-/* line 348, ../sass/library/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -377,7 +350,6 @@ input[type="submit"] {
 /*
  * Addresses box sizing set to content-box in IE8/9
  */
-/* line 358, ../sass/library/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -387,7 +359,6 @@ input[type="radio"] {
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
  */
-/* line 367, ../sass/library/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -400,7 +371,6 @@ input[type="search"] {
 /*
  * Corrects inner padding displayed oddly in S5, Chrome on OSX
  */
-/* line 378, ../sass/library/_normalize.scss */
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -409,7 +379,6 @@ input[type="search"]::-webkit-search-decoration {
  * Corrects inner padding and border displayed oddly in FF3/4
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
-/* line 388, ../sass/library/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -420,7 +389,6 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE6/7/8/9
  * 2. Improves readability and alignment in all browsers
  */
-/* line 398, ../sass/library/_normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -434,7 +402,6 @@ textarea {
 /* 
  * Remove most spacing between table cells
  */
-/* line 412, ../sass/library/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -443,7 +410,6 @@ table {
 /**
 *	Main grid container
 */
-/* line 6, ../sass/library/_hashgrid.scss */
 #grid {
   /* Dimensions - same width as your grid with gutters (980px) */
   width: 1024px;
@@ -466,13 +432,11 @@ table {
  * Set the column width taking the borders into consideration,
  * and use margins to set column gutters.
  */
-/* line 32, ../sass/library/_hashgrid.scss */
 #grid div.vert {
   width: 68px;
   margin-left: 16px;
   background-color: rgba(0, 128, 0, 0.2);
 }
-/* line 39, ../sass/library/_hashgrid.scss */
 #grid div.vert.first-line {
   margin-left: 15px;
 }
@@ -483,16 +447,14 @@ table {
  * Remember, the CSS properties that define the box model:
  * visible height = height + borders + margins + padding
  */
-/* line 51, ../sass/library/_hashgrid.scss */
 #grid div.horiz {
   /* line height */
-  height: 4.25px;
+  height: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin: 0;
   padding: 0;
 }
 
-/* line 61, ../sass/library/_hashgrid.scss */
 #grid.grid-2 div.vert {
   /* Vertical grid line colour for grid 3 */
   border-color: #bfebff;
@@ -502,7 +464,6 @@ table {
   margin-left: 15px;
   background-color: rgba(191, 235, 255, 0.3);
 }
-/* line 71, ../sass/library/_hashgrid.scss */
 #grid.grid-2 div.vert.first-line {
   margin-left: 7px;
 }
@@ -511,12 +472,10 @@ table {
 ----------------------------------------------------------------------*/
 /* Reseting animation */
 @-webkit-keyframes reset {
-  /* line 123, ../sass/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 124, ../sass/_base.scss */
   100% {
     opacity: 0;
   }
@@ -524,34 +483,48 @@ table {
 
 /*- ELEMENT SETUP
 ----------------------------------------------------------------------*/
-/* line 133, ../sass/_base.scss */
 img {
   max-width: 100%;
   height: auto;
 }
-/* line 137, ../sass/_base.scss */
 img.noscale {
   max-width: none;
 }
 
 /* Make links 'clickable' */
-/* line 143, ../sass/_base.scss */
 a {
   position: relative;
 }
 
-/* line 147, ../sass/_base.scss */
 a:active, a:focus {
   outline: none;
   top: 1px;
 }
 
-/* line 153, ../sass/_base.scss */
+/* Make table headings align left */
 th {
   text-align: left;
 }
 
-/* line 158, ../sass/_base.scss */
+/* Emphasize the kbd element */
+kbd {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+}
+
+del {
+  color: #666;
+}
+
+/* Style the hr element */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e2e2e2;
+  width: 100%;
+  margin: 48px auto 47px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   /* Fixes kerning. Watch out for some performance issues. */
   text-rendering: optimizeLegibility;
@@ -559,23 +532,19 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   font-size: 1em;
 }
-/* line 165, ../sass/_base.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit;
 }
 
-/* line 170, ../sass/_base.scss */
 p {
   margin: 0;
   padding: 0;
 }
 
-/* line 175, ../sass/_base.scss */
 pre {
   overflow: auto;
 }
 
-/* line 179, ../sass/_base.scss */
 pre, code {
   font-family: Monaco, "Courier New", Courier, monospace;
   /* Code doesn't look that good antialiased */
@@ -585,7 +554,6 @@ pre, code {
 /*- GLOBAL HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Nicer ampersand */
-/* line 193, ../sass/_base.scss */
 .amp {
   font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
   font-size: 1.4em;
@@ -594,41 +562,49 @@ pre, code {
 }
 
 /* Quick floating */
-/* line 201, ../sass/_base.scss */
 .alignleft {
   float: left;
 }
 
-/* line 204, ../sass/_base.scss */
 .alignright {
   float: right;
 }
 
-/* line 207, ../sass/_base.scss */
 .aligncenter {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 212, ../sass/_base.scss */
 .center {
   text-align: center;
 }
 
-/* line 215, ../sass/_base.scss */
 .left {
   text-align: left;
 }
 
-/* line 218, ../sass/_base.scss */
 .right {
   text-align: right;
+}
+
+/* List styles */
+ul.bulleted {
+  list-style-type: disc;
+}
+
+ul.squared {
+  list-style-type: square;
+}
+
+ol.outside,
+ul.outside {
+  list-style-position: outside;
+  padding-left: 0;
 }
 
 /*- NON-SEMANTIC HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Clearing stuff */
-/* line 230, ../sass/_base.scss */
 .clear {
   clear: both;
   display: block;
@@ -637,7 +613,6 @@ pre, code {
 }
 
 /* Clearfix hack */
-/* line 83, ../sass/_base.scss */
 .group:after {
   visibility: hidden;
   display: block;
@@ -646,91 +621,84 @@ pre, code {
   clear: both;
   height: 0;
 }
-/* line 91, ../sass/_base.scss */
 .group {
   display: inline-block;
 }
-/* line 92, ../sass/_base.scss */
 * html .group {
   height: 1%;
 }
-/* line 93, ../sass/_base.scss */
 .group {
   display: block;
 }
 
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-/* line 246, ../sass/_base.scss */
 .hidden {
   display: none;
 }
 
 /* Hide only visually, but have it available for screenreaders */
-/* line 251, ../sass/_base.scss */
 .visuallyhidden {
   position: absolute;
   left: -999em;
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 257, ../sass/_base.scss */
 .invisible {
   visibility: hidden;
 }
 
-/*	=MAIN
+/*	=MAIN CSS FILE
+	
+	Put all *main* site styles here. Use @imports.
 ----------------------------------------------------------------------*/
-/* line 4, ../sass/_main.scss */
+html {
+  background-color: #fff;
+  height: 100%;
+}
+
 body {
-  font: normal 14px/21px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: normal 15px/24px Georgia, "Times New Roman", serif;
   color: #222222;
   /* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
   /* Example: */
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   max-width: 992px;
 }
 
 /* Text and image selection styling */
-/* line 19, ../sass/_main.scss */
 ::selection {
   background: #e32980;
   color: #fff;
 }
 
-/* line 23, ../sass/_main.scss */
 ::-moz-selection {
   background: #e32980;
   color: #fff;
 }
 
-/* line 28, ../sass/_main.scss */
 img::selection {
   background: transparent;
 }
 
-/* line 31, ../sass/_main.scss */
 img::-moz-selection {
   background: transparent;
 }
 
 /*	=LINKS
 ----------------------------------------------------------------------*/
-/* line 42, ../sass/_main.scss */
-a, a:visited {
+a {
   -webkit-tap-highlight-color: #e32980;
-  color: #3c75a3;
+  color: #1975c0;
 }
 
-/* line 47, ../sass/_main.scss */
 a:hover, a:focus {
-  color: #2677b9;
+  color: #0377d6;
 }
 
 /*	=HEADINGS
 ----------------------------------------------------------------------*/
-/* line 55, ../sass/_main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: normal;
@@ -738,64 +706,121 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Grouped headings */
-/* line 63, ../sass/_main.scss */
 hgroup {
-  margin-bottom: 21px;
+  margin-bottom: 24px;
 }
-/* line 66, ../sass/_main.scss */
 hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
   margin-bottom: 0;
 }
 
-/* line 71, ../sass/_main.scss */
+/* Sub headings, in a hgroup for instance */
+.sub {
+  color: #888;
+  font-style: italic;
+}
+
 h1 {
   font-size: 2.618em;
-  line-height: 42px;
-  margin-bottom: 21px;
+  line-height: 48px;
+  margin-bottom: 24px;
+}
+h1.huge {
+  font-size: 4.236em;
+  line-height: 72px;
 }
 
-/* line 77, ../sass/_main.scss */
 h2 {
   font-size: 1.984em;
-  line-height: 42px;
+  line-height: 48px;
+  margin-bottom: 12px;
 }
 
-/* line 83, ../sass/_main.scss */
 h3 {
   font-size: 1.618em;
-  margin-bottom: 10.5px;
+  margin-bottom: 12px;
 }
 
-/* line 88, ../sass/_main.scss */
 h4 {
   font-size: 1.226em;
-  margin-bottom: 5.25px;
+  margin-bottom: 6px;
 }
 
-/* line 93, ../sass/_main.scss */
 h5 {
+  font-size: 1.1em;
+}
+
+/*	=MISC ELEMENTS
+----------------------------------------------------------------------*/
+pre {
+  background-color: #eee;
+  padding: 6px 16px;
+}
+
+blockquote {
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1em;
 }
 
 /*	=BUTTON STYLES
 ----------------------------------------------------------------------*/
-/* line 9, ../sass/common/_buttons.scss */
 .button,
 input[type="submit"],
 input[type="button"],
+input[type="reset"],
 button {
   display: inline-block;
+  background: #1975c0 url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI5OGZlMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE5NzVjMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: #1975c0 -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #298fe3), color-stop(100%, #1975c0));
+  background: #1975c0 -webkit-linear-gradient(#298fe3, #1975c0);
+  background: #1975c0 -moz-linear-gradient(#298fe3, #1975c0);
+  background: #1975c0 -o-linear-gradient(#298fe3, #1975c0);
+  background: #1975c0 -ms-linear-gradient(#298fe3, #1975c0);
+  background: #1975c0 linear-gradient(#298fe3, #1975c0);
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font: bold 1.1em/30px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
+  padding: 0 .5em;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -khtml-border-radius: 0.3em;
+  border-radius: 0.3em;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px, inset rgba(255, 255, 255, 0.1) 0 1px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px, inset rgba(255, 255, 255, 0.1) 0 1px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px, inset rgba(255, 255, 255, 0.1) 0 1px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px, inset rgba(255, 255, 255, 0.1) 0 1px 0;
+  border: 1px solid #1975c0;
+}
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+button:hover {
+  color: #fff;
+}
+.button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+button:active {
+  background-image: none;
+  top: auto;
+  text-shadow: none;
 }
 
 /*	=FORM STYLING
 ----------------------------------------------------------------------*/
-/* line 10, ../sass/common/_forms.scss */
 .text,
 textarea,
 input[type="text"],
 input[type="url"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="tel"] {
   font-size: 99%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -803,32 +828,76 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-/* line 15, ../sass/common/_forms.scss */
 textarea {
   resize: vertical;
 }
 
 /* Errors: */
-/* line 21, ../sass/common/_forms.scss */
 .negative {
   color: #cc0000;
 }
 
 /* Confirmations */
-/* line 28, ../sass/common/_forms.scss */
 .positive {
   color: green;
+}
+
+.meta {
+  color: #777;
+}
+
+/*	=COLUMNS
+----------------------------------------------------------------------*/
+/* A single column element */
+.column {
+  float: left;
+  margin-right: 1.613%;
+  /* The last in a row */
+}
+.column.last {
+  margin-right: 0;
+}
+
+/* Span half of the site's width */
+.half, .six-cols {
+  width: 49%;
+}
+
+.third, .four-cols {
+  width: 32%;
 }
 
 /*	=HEADER
 ----------------------------------------------------------------------*/
 /*	=FOOTER
 ----------------------------------------------------------------------*/
+/*	=POST/ARTICLE STYLES
+----------------------------------------------------------------------*/
+[role="article"] p {
+  margin-bottom: 24px;
+}
+
 /*	=EXAMPLE HOME VIEW
 ----------------------------------------------------------------------*/
-/* line 7, ../sass/views/_home.scss */
-.home section {
-  margin-bottom: 63px;
+/* Temporary styles for the demo page. Feel free to remove. */
+.home {
+  padding-top: 48px;
+}
+.home figcaption {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #777;
+}
+.home section, .home hgroup {
+  margin-bottom: 72px;
+}
+.home #intro {
+  margin: 0 auto;
+}
+.home .group {
+  margin-bottom: 48px;
+}
+.home p {
+  margin-bottom: 24px;
 }
 
 /*	=RESPONSIVE STYLES
@@ -843,6 +912,21 @@ textarea {
 		Inherits styles from: default layout
 
 --------------------------------------------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  body::before {
+    content: "Tablet media query fired";
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: yellow;
+    position: absolute;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
+  }
+}
 /* 
 		MOBILE LAYOUT
 			
@@ -850,19 +934,33 @@ textarea {
 		
 --------------------------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
-  /* line 45, ../sass/_responsive.scss */
   body {
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "Mobile media query fired";
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: silver;
+    position: absolute;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
   }
 
-  /* line 52, ../sass/_responsive.scss */
   .hide-mobile {
     display: none;
   }
 
-  /* line 56, ../sass/_responsive.scss */
-  pre {
-    white-space: normal;
+  /* All columns now stack on top of each other */
+  .column {
+    width: 100%;
+    float: none;
+    margin-right: 0;
   }
 }
 /*
@@ -873,5 +971,23 @@ textarea {
 	Inherits styles from: mobile layout and default layout.
 
 --------------------------------------------------------------------------------- */
+@media only screen and (max-width: 479px) {
+  body {
+    font-size: .8em;
+  }
+  body::before {
+    content: "Small screen mobile media query fired";
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: red;
+    position: absolute;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
+  }
+}
 /*	=PRINT STYLES
 ----------------------------------------------------------------------*/

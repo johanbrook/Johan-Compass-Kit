@@ -41,16 +41,21 @@ To have Compass watch your Sass file, and compile them on-the-fly:
 
 	master
 	- base
-		- library/reset
+		- library/normalize (switched from the Meyer reset)
 		- compass/css3
+		- library/hashgrid
 		
 	- main
 		- common
 			- common/buttons
+			- common/columns
+			- common/forms
+			- common/meta
+			
 		- partials
 			- partials/header
 			- partials/footer
-			- partials/forms
+			- partials/post
 			
 		- views
 			- views/home
@@ -68,9 +73,9 @@ Compass compiles Sass files into CSS in development mode by default, so your CSS
 
 The main site file. In here you write your CSS. I recommend you to branch out your site with imports (see below).
 
-### _partials.scss
+### Partials
 
-Thanks to Sass' powerful `@import` command, you're able to pull in external files directly into your main files without extra HTTP requests. Therefore I've divided the header, footer, and form sections into separate files. They are imported into `_partials.scss`, which is imported into `_main.scs`. Prepend a "_" (underscore) to your partials.
+Thanks to Sass' powerful `@import` command, you're able to pull in external files directly into your main files without extra HTTP requests. Therefore I've divided the header, footer, and form sections into separate files. Prepend a "_" (underscore) to your partials.
 
 ### _common.scss
 
@@ -79,6 +84,45 @@ I've discovered that having some common elements in separate files are pretty go
 ### _responsive.scss, _print.scss, and ie.scss
 
 Extra files. `_responsive.scss` includes some media queries (and debug helpers: [http://johanbrook.com/design/css/debugging-css-media-queries](http://johanbrook.com/design/css/debugging-css-media-queries/)).
+
+
+# Custom mixins
+
+## debugmessage($message, $color: yellow)
+
+Whenever you want to debug media queries, for instance, use this mixins with a parameter `$message` and an optional parameter of `$color`. It'll be prepended to the body element (i.e. sit as a flash above your content).
+
+## stretch($height: true, $width: true)
+
+Stretch an element horizontally (`$width` is true) and vertically (`$height` is true).
+
+## Clearfix
+
+Use `@include clearfix` in your SCSS code whenever you want to apply the clearfix hack on a parent element.
+
+# Functions
+
+## make_fluid($number, $total: $page_width)
+
+In responsive web design, it's handy to calculate percentage widths relative to parent elements. This is easy with Sass – you're able to do it on the fly.
+
+	#element{
+		width: make_fluid(300px);
+	}
+
+The width of the element above will depend on which base `$page_width` you've set (defaults to 992px). You can provide an optional width for the function to use as a reference in the second parameter.
+
+## get_columns($number)
+
+Specify an amount of columns, and the function will return a pixel width including gutters.
+
+	#element{
+		width: get_columns(4);
+	}
+
+This saves you a ton of time, and you don't have to use classnames in markup that often. Uses the variables `$column` and `$gutter`.
+
+
 
 # Config
 
@@ -98,3 +142,27 @@ For more info, please see the [Compass configuration reference](http://compass-s
 	
 
 The Rakefile includes one single `sass` task for quickly generating a production ready, compressed stylesheet.
+
+
+# License
+
+Free to use under the [MIT license](http://www.opensource.org/licenses/mit-license.php)
+
+Copyright (C) 2011 by Johan Brook
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
