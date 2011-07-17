@@ -82,13 +82,6 @@ textarea {
    Links
    ========================================================================== */
 
-a {
-    color: #00e;
-}
-
-a:visited {
-    color: #551a8b;
-}
 
 /*
  * Addresses outline displayed oddly in Chrome
@@ -131,7 +124,7 @@ strong {
 }
 
 blockquote {
-    margin: 1em 40px;
+    margin: $lineheight / 2 2em;
 }
 
 /*
@@ -147,7 +140,7 @@ dfn {
  */
 
 mark {
-    background: #ff0;
+    background: $comp;
     color: #000;
 }
 
@@ -226,12 +219,11 @@ sub {
 
 ul,
 ol {
-    margin: 1em 0;
-    padding: 0 0 0 40px;
+    margin: $lineheight / 2 0;
 }
 
 dd {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 $lineheight;
 }
 
 nav ul,
@@ -294,8 +286,8 @@ form {
  */
 
 fieldset {
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+    margin: 0 3px;
+    padding: $lineheight / 4 $gutter / 2 $lineheight / 2;
 }
 
 /*
@@ -318,7 +310,7 @@ button,
 input,
 select,
 textarea {
-    font-size: 100%; /* 1 */
+    font-size: 99%; /* 1 */
     margin: 0; /* 2 */
     vertical-align: baseline; /* 3 */
     *vertical-align: middle; /* 3 */

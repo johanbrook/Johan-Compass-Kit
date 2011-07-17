@@ -102,7 +102,7 @@ textarea {
 /*
  * Addresses outline displayed oddly in Chrome
  */
-/* line 89, ../sass/library/_normalize.scss */
+/* line 90, ../sass/library/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -111,7 +111,7 @@ a:focus {
  * Improves readability when focused and also mouse hovered in all browsers
  * people.opera.com/patrickl/experiments/keyboard/test
  */
-/* line 99, ../sass/library/_normalize.scss */
+/* line 100, ../sass/library/_normalize.scss */
 a:hover,
 a:active {
   outline: 0;
@@ -123,7 +123,7 @@ a:active {
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
-/* line 112, ../sass/library/_normalize.scss */
+/* line 113, ../sass/library/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -131,21 +131,21 @@ abbr[title] {
 /*
  * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
 */
-/* line 121, ../sass/library/_normalize.scss */
+/* line 122, ../sass/library/_normalize.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 125, ../sass/library/_normalize.scss */
+/* line 126, ../sass/library/_normalize.scss */
 blockquote {
-  margin: 1em 40px;
+  margin: 10.5px 2em;
 }
 
 /*
  * Addresses styling not present in S5, Chrome
  */
-/* line 133, ../sass/library/_normalize.scss */
+/* line 134, ../sass/library/_normalize.scss */
 dfn {
   font-style: italic;
 }
@@ -153,9 +153,9 @@ dfn {
 /*
  * Addresses styling not present in IE6/7/8/9
  */
-/* line 141, ../sass/library/_normalize.scss */
+/* line 142, ../sass/library/_normalize.scss */
 mark {
-  background: #ff0;
+  background: #274e84;
   color: #000;
 }
 
@@ -163,7 +163,7 @@ mark {
  * Corrects font family set oddly in IE6, S5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
-/* line 154, ../sass/library/_normalize.scss */
+/* line 155, ../sass/library/_normalize.scss */
 pre,
 code,
 kbd,
@@ -176,7 +176,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers
  */
-/* line 164, ../sass/library/_normalize.scss */
+/* line 165, ../sass/library/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -188,20 +188,20 @@ pre {
  * 2. Addresses quote property not supported in S4
  */
 /* 1 */
-/* line 177, ../sass/library/_normalize.scss */
+/* line 178, ../sass/library/_normalize.scss */
 q {
   quotes: none;
 }
 
 /* 2 */
-/* line 184, ../sass/library/_normalize.scss */
+/* line 185, ../sass/library/_normalize.scss */
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
-/* line 189, ../sass/library/_normalize.scss */
+/* line 190, ../sass/library/_normalize.scss */
 small {
   font-size: 75%;
 }
@@ -210,7 +210,7 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-/* line 199, ../sass/library/_normalize.scss */
+/* line 200, ../sass/library/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -219,12 +219,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 206, ../sass/library/_normalize.scss */
+/* line 207, ../sass/library/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 210, ../sass/library/_normalize.scss */
+/* line 211, ../sass/library/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -232,16 +232,15 @@ sub {
 /* =============================================================================
    Lists
    ========================================================================== */
-/* line 220, ../sass/library/_normalize.scss */
+/* line 221, ../sass/library/_normalize.scss */
 ul,
 ol {
-  margin: 1em 0;
-  padding: 0 0 0 40px;
+  margin: 10.5px 0;
 }
 
 /* line 225, ../sass/library/_normalize.scss */
 dd {
-  margin: 0 0 0 40px;
+  margin: 0 0 0 21px;
 }
 
 /* line 230, ../sass/library/_normalize.scss */
@@ -301,8 +300,8 @@ form {
  */
 /* line 288, ../sass/library/_normalize.scss */
 fieldset {
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  margin: 0 3px;
+  padding: 5.25px 8px 10.5px;
 }
 
 /*
@@ -327,7 +326,7 @@ button,
 input,
 select,
 textarea {
-  font-size: 100%;
+  font-size: 99%;
   /* 1 */
   margin: 0;
   /* 2 */
@@ -487,7 +486,7 @@ table {
 /* line 51, ../sass/library/_hashgrid.scss */
 #grid div.horiz {
   /* line height */
-  height: 5.25px;
+  height: 4.25px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin: 0;
   padding: 0;
