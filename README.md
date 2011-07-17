@@ -1,5 +1,7 @@
 # Johan's Compass Kit
 
+### Version 1.0.1
+
 My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compass](http://compass-style.org).
 
 # What?
