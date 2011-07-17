@@ -150,13 +150,19 @@ a:active, a:focus{
 
 
 h1, h2, h3, h4, h5, h6{
-	text-rendering: optimizeLegibility;		/* Fixes kerning. Watch out for some performance issues. */
+	/* Fixes kerning. Watch out for some performance issues. */
+	text-rendering: optimizeLegibility;	
+	
+	a{
+		font-weight: inherit;
+	}
 }
 
 
 pre, code{
 	font-family: $monospaced;
-	-webkit-font-smoothing: subpixel-antialiased;		/* Code doesn't look that good antialiased */
+	/* Code doesn't look that good antialiased */
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 
@@ -180,6 +186,10 @@ pre, code{
 }
 .alignright{
 	float: right;
+}
+.aligncenter{
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .center{

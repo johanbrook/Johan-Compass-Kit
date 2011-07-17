@@ -3,6 +3,9 @@
 
 // Button styling/mixins goes here
 
-.button{
+.button,
+input[type="submit"],
+input[type="button"],
+button {
 	display: inline-block;
 }

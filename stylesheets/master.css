@@ -15,8 +15,8 @@
 ----------------------------------------------------------------*/
 /*	=UTILS
 ----------------------------------------------------------------------*/
-/* Imports the Meyer reset (the latest, for HTML5) */
-/* line 17, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* MEYER RESET (HTML5) */
+/* line 17, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -38,82 +38,75 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 115, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 115, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* Make some block elements relative: */
-/* line 8, ../sass/library/_reset.scss */
-div, section, article, figure, aside, hgroup, header, footer, nav,
-ul, ol, p, a, li, form {
-  position: relative;
-}
-
-/* line 12, ../sass/library/_reset.scss */
+/* line 6, ../sass/library/_reset.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 13, ../sass/library/_reset.scss */
+/* line 7, ../sass/library/_reset.scss */
 em {
   font-style: italic;
 }
 
-/* line 14, ../sass/library/_reset.scss */
+/* line 8, ../sass/library/_reset.scss */
 small {
-  font-size: 80%;
+  font-size: .9em;
 }
 
 /*	=GLOBAL ANIMATIONS
 ----------------------------------------------------------------------*/
 /* Reseting animation */
 @-webkit-keyframes reset {
-  /* line 147, ../sass/_base.scss */
+  /* line 122, ../sass/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 148, ../sass/_base.scss */
+  /* line 123, ../sass/_base.scss */
   100% {
     opacity: 0;
   }
@@ -121,36 +114,49 @@ small {
 
 /*- ELEMENT SETUP
 ----------------------------------------------------------------------*/
-/* line 157, ../sass/_base.scss */
+/* line 132, ../sass/_base.scss */
 img {
   max-width: 100%;
-  height: auto !important;
+  height: auto;
+}
+/* line 136, ../sass/_base.scss */
+img.noscale {
+  max-width: none;
 }
 
 /* Make links 'clickable' */
-/* line 164, ../sass/_base.scss */
+/* line 142, ../sass/_base.scss */
+a {
+  position: relative;
+}
+
+/* line 146, ../sass/_base.scss */
 a:active, a:focus {
   outline: none;
   top: 1px;
 }
 
-/* line 170, ../sass/_base.scss */
+/* line 152, ../sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
-  text-rendering: optimizeLegibility;
   /* Fixes kerning. Watch out for some performance issues. */
+  text-rendering: optimizeLegibility;
+}
+/* line 156, ../sass/_base.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
 }
 
-/* line 175, ../sass/_base.scss */
+/* line 162, ../sass/_base.scss */
 pre, code {
   font-family: Monaco, "Courier New", Courier, monospace;
-  -webkit-font-smoothing: subpixel-antialiased;
   /* Code doesn't look that good antialiased */
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /*- GLOBAL HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Nicer ampersand */
-/* line 188, ../sass/_base.scss */
+/* line 176, ../sass/_base.scss */
 .amp {
   font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
   font-size: 1.4em;
@@ -159,45 +165,41 @@ pre, code {
 }
 
 /* Quick floating */
-/* line 196, ../sass/_base.scss */
+/* line 184, ../sass/_base.scss */
 .alignleft {
   float: left;
 }
 
-/* line 199, ../sass/_base.scss */
+/* line 187, ../sass/_base.scss */
 .alignright {
   float: right;
 }
 
-/* line 203, ../sass/_base.scss */
-.button, input[type="submit"], button {
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  -moz-border-radius: 0.3em;
-  -webkit-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -khtml-border-radius: 0.3em;
-  border-radius: 0.3em;
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 0.3em 1em;
-  cursor: pointer;
+/* line 190, ../sass/_base.scss */
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 111, ../sass/_base.scss */
-.button:hover, input[type="submit"]:hover, button:hover {
-  text-decoration: none;
+
+/* line 195, ../sass/_base.scss */
+.center {
+  text-align: center;
 }
-/* line 206, ../sass/_base.scss */
-.button.small, input[type="submit"].small, button.small {
-  font-size: .9em;
-  padding: 0 .7em;
+
+/* line 198, ../sass/_base.scss */
+.left {
+  text-align: left;
+}
+
+/* line 201, ../sass/_base.scss */
+.right {
+  text-align: right;
 }
 
 /*- NON-SEMANTIC HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Clearing stuff */
-/* line 219, ../sass/_base.scss */
+/* line 213, ../sass/_base.scss */
 .clear {
   clear: both;
   display: block;
@@ -205,9 +207,9 @@ pre, code {
   margin: -1px 0 0 0;
 }
 
-/* Clearfix hack. I'm extending this class with Sass, therefore it might look a bit messy below: */
-/* line 83, ../sass/_base.scss */
-.clearfix:after {
+/* Clearfix hack */
+/* line 82, ../sass/_base.scss */
+.group:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -215,35 +217,35 @@ pre, code {
   clear: both;
   height: 0;
 }
-/* line 91, ../sass/_base.scss */
-.clearfix {
+/* line 90, ../sass/_base.scss */
+.group {
   display: inline-block;
 }
-/* line 92, ../sass/_base.scss */
-* html .clearfix {
+/* line 91, ../sass/_base.scss */
+* html .group {
   height: 1%;
 }
-/* line 93, ../sass/_base.scss */
-.clearfix {
+/* line 92, ../sass/_base.scss */
+.group {
   display: block;
 }
 
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-/* line 235, ../sass/_base.scss */
+/* line 229, ../sass/_base.scss */
 .hidden {
   display: none;
 }
 
 /* Hide only visually, but have it available for screenreaders */
-/* line 240, ../sass/_base.scss */
+/* line 234, ../sass/_base.scss */
 .visuallyhidden {
   position: absolute;
   left: -999em;
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 246, ../sass/_base.scss */
+/* line 240, ../sass/_base.scss */
 .invisible {
   visibility: hidden;
 }
@@ -298,24 +300,48 @@ h2 {
   font-size: 1.226em;
 }
 
-/*	=HEADER
+/*	=BUTTON STYLES
 ----------------------------------------------------------------------*/
-/*	=FOOTER
-----------------------------------------------------------------------*/
+/* line 9, ../sass/common/_buttons.scss */
+.button,
+input[type="submit"],
+input[type="button"],
+button {
+  display: inline-block;
+}
+
 /*	=FORM STYLING
 ----------------------------------------------------------------------*/
+/* line 10, ../sass/common/_forms.scss */
+.text,
+textarea,
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"] {
+  font-size: 99%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* Errors: */
-/* line 10, ../sass/partials/_forms.scss */
+/* line 18, ../sass/common/_forms.scss */
 .negative {
   color: #cc0000;
 }
 
 /* Confirmations */
-/* line 17, ../sass/partials/_forms.scss */
+/* line 25, ../sass/common/_forms.scss */
 .positive {
   color: green;
 }
 
+/*	=HEADER
+----------------------------------------------------------------------*/
+/*	=FOOTER
+----------------------------------------------------------------------*/
 /*	=EXAMPLE HOME VIEW
 ----------------------------------------------------------------------*/
 /*	=RESPONSIVE STYLES

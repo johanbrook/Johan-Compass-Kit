@@ -2,7 +2,15 @@
 ----------------------------------------------------------------------*/
 
 
-
+.text,
+textarea,
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"] {
+	font-size: 99%;
+	@include box-sizing("border-box");
+}
 
 
 /* Errors: */
