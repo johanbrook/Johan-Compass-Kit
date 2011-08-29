@@ -1,5 +1,7 @@
 require "rake"
 
+task :default => ["compile:dev"]
+
 namespace :compile do
   
   desc "Regular compile"

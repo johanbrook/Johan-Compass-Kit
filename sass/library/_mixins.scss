@@ -1,0 +1,59 @@
+@mixin debugmessage($message, $color: yellow){
+	&::before{
+		content: $message;
+		font-weight: bold;
+		display: block;
+		text-align: center;
+		background: #{$color};
+		position: absolute;
+		@include stretch($height: false);
+		z-index: 999;
+		top: 0;
+	}
+}
+
+
+@mixin stretch($height: true, $width: true){
+	position: absolute;
+	@if($height == true){
+		top: 0;
+		bottom: 0;
+	}
+	@if($width == true){
+		right: 0;
+		left: 0;
+	}
+}
+
+
+// A regular clearfix which can be applied directly in the CSS (no need for nasty HTML classes): "@include clearfix" on parent element.
+@mixin clearfix{
+	&:after{
+		visibility: hidden;
+     	display: block;
+	    font-size: 0;
+     	content: " ";
+     	clear: both;
+     	height: 0;	
+	}
+	& {display: inline-block;}
+	* html & {height: 1%;}
+	& {display: block;}
+}
+
+
+// Functions
+
+// Really nifty function for responsive designing. Just use it like: 'width: make_fluid(308px)', and it'll return a percentage
+// based on the width of the container.
+
+@function make_fluid($number, $total: $page_width){
+	@return ($number / $total)*100%;
+}
+
+// Returns correctly formatted number of columns (based on the $column variable).
+// Example usage: 'width: make_fluid(get_columns(3))'
+
+@function get_columns($number){
+	@return ( ($column*$number) + ($gutter*($number - 1)) );
+}

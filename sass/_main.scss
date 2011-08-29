@@ -21,6 +21,13 @@ body{
 }
 
 
+// Common styles
+
+@import "common";
+
+
+
+
 /* Text and image selection styling */
 
 ::selection{
@@ -115,11 +122,6 @@ h5{
 	font-size: 1.1em;
 }
 
-
-
-// Common
-
-@import "common";
 
 
 // Partials

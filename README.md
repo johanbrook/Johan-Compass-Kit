@@ -6,11 +6,17 @@ My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compa
 
 [Demo](http://johanbrook.com/compass-kit/index.html)
 
-# What?
+# What is it
 
 This is a drop-in collection of Sass files wrapped up in a nice structure to help me start off a new project in no time. 
 
 My Compass Kit is quite stripped – it mainly consists of handy variables, mixins, and functions. I created [Dyluni](https://github.com/johanbrook/dyluni) a while ago, but this is a Compass based version, with a bit cleaner approach. Its strength is the file structure: make sure that your Sass files are in order, just like the rest of your app/site. Don't Repeat Yourself, and Convention Over Configuration, etc. A pro tip is to give the Sass files in the `views` directory the same names as your app's views (the same goes for the partials). No more 'finding that special CSS section'.
+
+# What it's not
+
+My Compass Kit is not a large scale "framework" for advanced CSS layouts and magic trickery. It's a base set of files ordered in a file structured meant for reuse. It's a living thing (which means I might change stuff as I see fit, evolved from my own workflow and other best practices).
+
+A great Compass extension for CSS patterns is [Stitch](http://stitchcss.com/) – give that a try as well (the timing functions are to die for).
 
 # Why?
 
@@ -51,6 +57,7 @@ To have Compass watch your Sass file, and compile them on-the-fly:
 		
 	- main
 		- common
+			- common/elements
 			- common/buttons
 			- common/columns
 			- common/forms
@@ -92,40 +99,45 @@ Extra files. `_responsive.scss` includes some media queries (and debug helpers: 
 
 # Custom mixins
 
-## debugmessage($message, $color: yellow)
+	@include debugmessage($message, $color: yellow)
 
 Whenever you want to debug media queries, for instance, use this mixins with a parameter `$message` and an optional parameter of `$color`. It'll be prepended to the body element (i.e. sit as a flash above your content).
 
-## stretch($height: true, $width: true)
+	@stretch($height: true, $width: true)
 
 Stretch an element horizontally (`$width` is true) and vertically (`$height` is true).
 
 ## Clearfix
 
-Use `@include clearfix` in your SCSS code whenever you want to apply the clearfix hack on a parent element.
+	#element{
+		@include clearfix;
+	}
+
+Use `@include clearfix` in your SCSS code whenever you want to apply the clearfix hack on a parent element, or the classname `group` in the markup.
 
 # Functions
 
-## make_fluid($number, $total: $page_width)
+	#element{
+		width: make_fluid(300px);	// make_fluid(measure_in_pixels, $total: $page_width)
+	}
 
 In responsive web design, it's handy to calculate percentage widths relative to parent elements. This is easy with Sass – you're able to do it on the fly.
 
-	#element{
-		width: make_fluid(300px);
-	}
-
 The width of the element above will depend on which base `$page_width` you've set (defaults to 992px). You can provide an optional width for the function to use as a reference in the second parameter.
-
-## get_columns($number)
-
-Specify an amount of columns, and the function will return a pixel width including gutters.
 
 	#element{
 		width: get_columns(4);
 	}
 
+Specify an amount of columns, and the function will return a pixel width including gutters.
+
 This saves you a ton of time, and you don't have to use classnames in markup that often. Uses the variables `$column` and `$gutter`.
 
+All together now:
+
+	#element{
+		width: make_fluid(get_columns(4), 800px);
+	}
 
 
 # Config
@@ -138,14 +150,21 @@ For more info, please see the [Compass configuration reference](http://compass-s
 
 ### Rakefile
 
-	$ rake sass
-	
-	overwrite stylesheets/ie.css 
-	overwrite stylesheets/master.css 
-	* Sass compiled
-	
+Includes two simple tasks:
 
-The Rakefile includes one single `sass` task for quickly generating a production ready, compressed stylesheet.
+	$ rake compile:production
+	
+	# => overwrite stylesheets/ie.css 
+	# => overwrite stylesheets/master.css 
+	# => * Sass compiled for production
+	
+	$ rake compile:dev
+	
+	# => overwrite stylesheets/ie.css 
+	# => overwrite stylesheets/master.css 
+	# => * Sass compiled
+
+The Rakefile includes a `compile:production` task for quickly generating a production ready, compressed stylesheet.
 
 
 # License

@@ -50,66 +50,7 @@ $column:		68px;
 
 // Custom mixins
 
-@mixin debugmessage($message, $color: yellow){
-	&::before{
-		content: $message;
-		font-weight: bold;
-		display: block;
-		text-align: center;
-		background: #{$color};
-		position: absolute;
-		@include stretch($height: false);
-		z-index: 999;
-		top: 0;
-	}
-}
-
-
-@mixin stretch($height: true, $width: true){
-	position: absolute;
-	@if($height == true){
-		top: 0;
-		bottom: 0;
-	}
-	@if($width == true){
-		right: 0;
-		left: 0;
-	}
-}
-
-
-// A regular clearfix which can be applied directly in the CSS (no need for nasty HTML classes): "@include clearfix" on parent element.
-@mixin clearfix{
-	&:after{
-		visibility: hidden;
-     	display: block;
-	    font-size: 0;
-     	content: " ";
-     	clear: both;
-     	height: 0;	
-	}
-	& {display: inline-block;}
-	* html & {height: 1%;}
-	& {display: block;}
-}
-
-
-// Functions
-
-// Really nifty function for responsive designing. Just use it like: 'width: make_fluid(308px)', and it'll return a percentage
-// based on the width of the container.
-
-@function make_fluid($number, $total: $page_width){
-	@return ($number / $total)*100%;
-}
-
-// Returns correctly formatted number of columns (based on the $column variable).
-// Example usage: 'width: make_fluid(get_columns(3))'
-
-@function get_columns($number){
-	@return ( ($column*$number) + ($gutter*($number - 1)) );
-}
-
+@import "library/mixins";
 
 
 // Animations
@@ -122,75 +63,6 @@ $column:		68px;
 @-webkit-keyframes reset {
 	0% 			{ opacity: 0;}
 	100% 		{ opacity: 0;}
-}
-
-
-
-
-/*- ELEMENT SETUP
-----------------------------------------------------------------------*/
-
-img {
-	max-width: 100%;
-	height: auto;
-	
-	&.noscale{
-		max-width: none;
-	}
-}
-
-/* Make links 'clickable' */
-a{
-	position: relative;
-}
-
-a:active, a:focus{
-	outline: none;
-	top: 1px;
-}
-
-/* Make table headings align left */
-th{
-	text-align: left;
-}
-
-
-/* Emphasize the kbd element */
-kbd{
-	font-family: $sans;
-	font-weight: bolder;
-}
-
-del{
-	color: #666;
-}
-
-
-h1, h2, h3, h4, h5, h6{
-	/* Fixes kerning. Watch out for some performance issues. */
-	text-rendering: optimizeLegibility;	
-	margin: 0;
-	padding: 0;
-	font-size: 1em;
-	
-	a{
-		font-weight: inherit;
-	}
-}
-
-p{
-	margin: 0;
-	padding: 0;
-}
-
-pre{
-	overflow: auto;
-}
-
-pre, code{
-	font-family: $monospaced;
-	/* Code doesn't look that good antialiased */
-	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 

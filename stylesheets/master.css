@@ -481,67 +481,6 @@ table {
   }
 }
 
-/*- ELEMENT SETUP
-----------------------------------------------------------------------*/
-img {
-  max-width: 100%;
-  height: auto;
-}
-img.noscale {
-  max-width: none;
-}
-
-/* Make links 'clickable' */
-a {
-  position: relative;
-}
-
-a:active, a:focus {
-  outline: none;
-  top: 1px;
-}
-
-/* Make table headings align left */
-th {
-  text-align: left;
-}
-
-/* Emphasize the kbd element */
-kbd {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bolder;
-}
-
-del {
-  color: #666;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  /* Fixes kerning. Watch out for some performance issues. */
-  text-rendering: optimizeLegibility;
-  margin: 0;
-  padding: 0;
-  font-size: 1em;
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  font-weight: inherit;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}
-
-pre {
-  overflow: auto;
-}
-
-pre, code {
-  font-family: Monaco, "Courier New", Courier, monospace;
-  /* Code doesn't look that good antialiased */
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
 /*- GLOBAL HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Nicer ampersand */
@@ -658,86 +597,65 @@ body {
   max-width: 992px;
 }
 
-/* Text and image selection styling */
-::selection {
-  background: #e32980;
-  color: #fff;
-}
-
-::-moz-selection {
-  background: #e32980;
-  color: #fff;
-}
-
-img::selection {
-  background: transparent;
-}
-
-img::-moz-selection {
-  background: transparent;
-}
-
-/*	=LINKS
+/*- ELEMENT SETUP
 ----------------------------------------------------------------------*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+img.noscale {
+  max-width: none;
+}
+
+/* Make links 'clickable' */
 a {
-  -webkit-tap-highlight-color: #e32980;
-  color: #1975c0;
+  position: relative;
 }
 
-a:hover, a:focus {
-  color: #0377d6;
+a:active, a:focus {
+  outline: none;
+  top: 1px;
 }
 
-/*	=HEADINGS
-----------------------------------------------------------------------*/
+/* Make table headings align left */
+th {
+  text-align: left;
+}
+
+/* Emphasize the kbd element */
+kbd {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+}
+
+del {
+  color: #666;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
+  /* Fixes kerning. Watch out for some performance issues. */
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
 }
 
-/* Grouped headings */
-hgroup {
-  margin-bottom: 24px;
-}
-hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
-  margin-bottom: 0;
+p {
+  margin: 0;
+  padding: 0;
 }
 
-/* Sub headings, in a hgroup for instance */
-.sub {
-  color: #888;
-  font-style: italic;
+pre {
+  overflow: auto;
 }
 
-h1 {
-  font-size: 2.618em;
-  line-height: 48px;
-  margin-bottom: 24px;
-}
-h1.huge {
-  font-size: 4.236em;
-  line-height: 72px;
-}
-
-h2 {
-  font-size: 1.984em;
-  line-height: 48px;
-  margin-bottom: 12px;
-}
-
-h3 {
-  font-size: 1.618em;
-  margin-bottom: 12px;
-}
-
-h4 {
-  font-size: 1.226em;
-  margin-bottom: 6px;
-}
-
-h5 {
-  font-size: 1.1em;
+pre, code {
+  font-family: Monaco, "Courier New", Courier, monospace;
+  /* Code doesn't look that good antialiased */
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /*	=MISC ELEMENTS
@@ -855,6 +773,88 @@ textarea {
 }
 
 /* And then it's up to you to continue building with whichever grid system you like ... */
+/* Text and image selection styling */
+::selection {
+  background: #e32980;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #e32980;
+  color: #fff;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+/*	=LINKS
+----------------------------------------------------------------------*/
+a {
+  -webkit-tap-highlight-color: #e32980;
+  color: #1975c0;
+}
+
+a:hover, a:focus {
+  color: #0377d6;
+}
+
+/*	=HEADINGS
+----------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grouped headings */
+hgroup {
+  margin-bottom: 24px;
+}
+hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
+  margin-bottom: 0;
+}
+
+/* Sub headings, in a hgroup for instance */
+.sub {
+  color: #888;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2.618em;
+  line-height: 48px;
+  margin-bottom: 24px;
+}
+h1.huge {
+  font-size: 4.236em;
+  line-height: 72px;
+}
+
+h2 {
+  font-size: 1.984em;
+  line-height: 48px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 1.618em;
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-size: 1.226em;
+  margin-bottom: 6px;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
 /*	=HEADER
 ----------------------------------------------------------------------*/
 /*	=FOOTER
