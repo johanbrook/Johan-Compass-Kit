@@ -8,7 +8,7 @@ My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compa
 
 # What is it
 
-This is a drop-in collection of Sass files wrapped up in a nice structure to help me start off a new project in no time. 
+**This is a drop-in collection of Sass files wrapped up in a nice structure to help me start off a new project in no time. **
 
 My Compass Kit is quite stripped – it mainly consists of handy variables, mixins, and functions. I created [Dyluni](https://github.com/johanbrook/dyluni) a while ago, but this is a Compass based version, with a bit cleaner approach. Its strength is the file structure: make sure that your Sass files are in order, just like the rest of your app/site. Don't Repeat Yourself, and Convention Over Configuration, etc. A pro tip is to give the Sass files in the `views` directory the same names as your app's views (the same goes for the partials). No more 'finding that special CSS section'.
 
@@ -103,7 +103,7 @@ Extra files. `_responsive.scss` includes some media queries (and debug helpers: 
 
 Whenever you want to debug media queries, for instance, use this mixins with a parameter `$message` and an optional parameter of `$color`. It'll be prepended to the body element (i.e. sit as a flash above your content).
 
-	@stretch($height: true, $width: true)
+	@include stretch($height: true, $width: true)
 
 Stretch an element horizontally (`$width` is true) and vertically (`$height` is true).
 
@@ -131,7 +131,7 @@ The width of the element above will depend on which base `$page_width` you've se
 
 Specify an amount of columns, and the function will return a pixel width including gutters.
 
-This saves you a ton of time, and you don't have to use classnames in markup that often. Uses the variables `$column` and `$gutter`.
+This saves you a ton of time, and you don't have to use classnames in markup that often. Uses the variables `$column` and `$gutter` (check in `_base.scss`).
 
 All together now:
 
