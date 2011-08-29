@@ -516,15 +516,6 @@ del {
   color: #666;
 }
 
-/* Style the hr element */
-hr {
-  border: 0;
-  height: 1px;
-  background-color: #e2e2e2;
-  width: 100%;
-  margin: 48px auto 47px;
-}
-
 h1, h2, h3, h4, h5, h6 {
   /* Fixes kerning. Watch out for some performance issues. */
   text-rendering: optimizeLegibility;
@@ -842,10 +833,6 @@ textarea {
   color: green;
 }
 
-.meta {
-  color: #777;
-}
-
 /*	=COLUMNS
 ----------------------------------------------------------------------*/
 /* A single column element */
@@ -867,6 +854,7 @@ textarea {
   width: 32%;
 }
 
+/* And then it's up to you to continue building with whichever grid system you like ... */
 /*	=HEADER
 ----------------------------------------------------------------------*/
 /*	=FOOTER

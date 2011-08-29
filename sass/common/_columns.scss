@@ -22,3 +22,5 @@
 .third, .four-cols{
 	width: floor(make_fluid(get_columns(4)));
 }
+
+/* And then it's up to you to continue building with whichever grid system you like ... */

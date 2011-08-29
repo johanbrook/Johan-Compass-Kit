@@ -165,16 +165,6 @@ del{
 	color: #666;
 }
 
-/* Style the hr element */
-
-hr{
-	border: 0;
-	height: 1px;
-	background-color: #e2e2e2;
-	width: 100%;
-	margin: $lineheight*2 auto $lineheight*2 - 1px;
-}
-
 
 h1, h2, h3, h4, h5, h6{
 	/* Fixes kerning. Watch out for some performance issues. */
