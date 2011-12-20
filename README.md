@@ -4,7 +4,7 @@
 
 My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compass](http://compass-style.org).
 
-[Demo](http://johanbrook.com/compass-kit/index.html)
+[Demo](http://playground.johanbrook.com/css/compass-boilerplate/)
 
 # What is it
 
