@@ -14,8 +14,6 @@
 *	----------------------
 *
 ----------------------------------------------------------------*/
-/*	=UTILS AND BASE CONFIGURATION
-----------------------------------------------------------------------*/
 /* normalize.css 2011-07-12T10:51 UTC · http://github.com/necolas/normalize.css */
 /* Modified by Johan Brook, 2011-07-17 */
 /* =============================================================================
@@ -130,7 +128,7 @@ strong {
 }
 
 blockquote {
-  margin: 12px 2em;
+  margin: 0;
 }
 
 /*
@@ -144,7 +142,7 @@ dfn {
  * Addresses styling not present in IE6/7/8/9
  */
 mark {
-  background: #ffff99;
+  background: yellow;
   color: #000;
 }
 
@@ -215,11 +213,11 @@ sub {
    ========================================================================== */
 ul,
 ol {
-  margin: 0 0 24px;
+  margin: 0 0 1.5em;
 }
 
 dd {
-  margin-bottom: 24px;
+  margin-bottom: 1.5em;
 }
 
 nav ul,
@@ -275,7 +273,7 @@ form {
  */
 fieldset {
   margin: 0 3px;
-  padding: 6px 8px 12px;
+  padding: 0;
 }
 
 /*
@@ -407,80 +405,8 @@ table {
   border-spacing: 0;
 }
 
-/**
-*	Main grid container
-*/
-#grid {
-  /* Dimensions - same width as your grid with gutters (980px) */
-  width: 1024px;
-  /* Grid (left-aligned)
-  position: absolute;
-  top: 0;
-  left: 0;
-  */
-  /* Grid (centered) */
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -512px;
-  z-index: 999;
-}
-
-/**
- * Vertical grid lines
- *
- * Set the column width taking the borders into consideration,
- * and use margins to set column gutters.
- */
-#grid div.vert {
-  width: 68px;
-  margin-left: 16px;
-  background-color: rgba(0, 128, 0, 0.2);
-}
-#grid div.vert.first-line {
-  margin-left: 15px;
-}
-
-/**
- * Horizontal grid lines, defined by your base line height
- *
- * Remember, the CSS properties that define the box model:
- * visible height = height + borders + margins + padding
- */
-#grid div.horiz {
-  /* line height */
-  height: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 0;
-  padding: 0;
-}
-
-#grid.grid-2 div.vert {
-  /* Vertical grid line colour for grid 3 */
-  border-color: #bfebff;
-  border-style: dotted;
-  width: 15px;
-  border-width: 0 1px;
-  margin-left: 15px;
-  background-color: rgba(191, 235, 255, 0.3);
-}
-#grid.grid-2 div.vert.first-line {
-  margin-left: 7px;
-}
-
-/*	=GLOBAL ANIMATIONS
+/*	=UTILS AND BASE CONFIGURATION
 ----------------------------------------------------------------------*/
-/* Reseting animation */
-@-webkit-keyframes reset {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 /*- GLOBAL HELPER CLASSES
 ----------------------------------------------------------------------*/
 /* Nicer ampersand */
@@ -578,25 +504,6 @@ ul.outside {
   visibility: hidden;
 }
 
-/*	=MAIN CSS FILE
-	
-	Put all *main* site styles here. Use @imports.
-----------------------------------------------------------------------*/
-html {
-  background-color: #fff;
-  height: 100%;
-}
-
-body {
-  font: normal 15px/24px Georgia, "Times New Roman", serif;
-  color: #222222;
-  /* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
-  /* Example: */
-  width: 80%;
-  margin: 0 auto;
-  max-width: 992px;
-}
-
 /*- ELEMENT SETUP
 ----------------------------------------------------------------------*/
 img {
@@ -663,11 +570,6 @@ pre, code {
 pre {
   background-color: #eee;
   padding: 6px 16px;
-}
-
-blockquote {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.1em;
 }
 
 /*	=BUTTON STYLES
@@ -773,6 +675,26 @@ textarea {
 }
 
 /* And then it's up to you to continue building with whichever grid system you like ... */
+/*	=MAIN CSS FILE
+	
+	Put all *main* site styles here. Use @imports.
+----------------------------------------------------------------------*/
+html {
+  background-color: #fff;
+  height: 100%;
+}
+
+body {
+  font: normal 15px/24px Georgia, "Times New Roman", serif;
+  color: #222222;
+  /* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
+  /* Example: */
+  width: 80%;
+  margin: 0 auto;
+  max-width: 992px;
+  height: 100%;
+}
+
 /* Text and image selection styling */
 ::selection {
   background: #e32980;
@@ -924,7 +846,6 @@ h5 {
 @media only screen and (max-width: 767px) {
   body {
     -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
   }
   body::before {
     content: "Mobile media query fired";
