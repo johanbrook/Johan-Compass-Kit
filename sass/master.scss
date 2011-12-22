@@ -17,11 +17,14 @@
 // Set this variable to 'true' to enable debugging features
 $DEBUG: true;
 
+// Mandatory
+@import "library/normalize";
+@import "compass/css3";
 
-// "Config" file
+// Config file
 @import "base";
 
-// Main, site-specific styles
+// Main site styles
 @import "main";
 
 @import "responsive";

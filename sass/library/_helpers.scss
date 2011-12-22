@@ -1,0 +1,88 @@
+// Helper classes
+
+
+/*- GLOBAL HELPER CLASSES
+----------------------------------------------------------------------*/
+
+/* Nicer ampersand */
+.amp{
+	font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
+	font-size: 1.4em;
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* Quick floating */
+.alignleft{
+	float: left;
+}
+.alignright{
+	float: right;
+}
+.aligncenter{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center{
+	text-align: center;
+}
+.left{
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+
+
+/* List styles */
+
+ul.bulleted{
+	list-style-type: disc;
+}
+ul.squared{
+	list-style-type: square;
+}
+
+ol.outside,
+ul.outside{
+	list-style-position: outside;
+	padding-left: 0;
+}
+
+
+/*- NON-SEMANTIC HELPER CLASSES
+----------------------------------------------------------------------*/
+
+
+/* Clearing stuff */
+.clear{
+	clear: both; 
+	display: block; 
+	height: 1px; 
+	margin: -1px 0 0 0;
+}
+
+
+/* Clearfix hack */
+
+.group{
+	@include clearfix;
+}
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+	display: none; 
+}
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden { 
+	position: absolute;   
+	left: -999em;
+}
+ 
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+	visibility: hidden; 
+}

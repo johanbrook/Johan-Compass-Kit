@@ -127,7 +127,7 @@ strong {
 }
 
 blockquote {
-    margin: $lineheight / 2 2em;
+    margin: 0;
 }
 
 /*
@@ -143,7 +143,7 @@ dfn {
  */
 
 mark {
-    background: $comp;
+    background: yellow;
     color: #000;
 }
 
@@ -222,11 +222,11 @@ sub {
 
 ul,
 ol {
-    margin: 0 0 $lineheight;
+    margin: 0 0 1.5em;
 }
 
 dd{
-	margin-bottom: $lineheight;
+	margin-bottom: 1.5em;
 }
 
 
@@ -292,7 +292,7 @@ form {
 
 fieldset {
     margin: 0 3px;
-    padding: $lineheight / 4 $gutter / 2 $lineheight / 2;
+	padding: 0;
 }
 
 /*
