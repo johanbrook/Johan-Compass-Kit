@@ -1,6 +1,6 @@
 # Johan's Compass Kit
 
-### Version 1.0.1
+### Version 1.5
 
 My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compass](http://compass-style.org).
 
@@ -50,19 +50,23 @@ To have Compass watch your Sass file, and compile them on-the-fly:
 ## Import scheme
 
 	master
+	- library/normalize
+	- compass/css3
+	
 	- base
-		- library/normalize (switched from the Meyer reset)
-		- compass/css3
-		- library/hashgrid
+		- library/variables
+		- library/mixins
+		- library/helpers
 		
-	- main
 		- common
+			- common/fonts
 			- common/elements
 			- common/buttons
-			- common/columns
 			- common/forms
-			- common/meta
-			
+			- common/columns
+			- common/animations
+
+	- main	
 		- partials
 			- partials/header
 			- partials/footer

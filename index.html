@@ -32,7 +32,7 @@
 
 			<p class="center">
 				<a class="button" href="https://github.com/johanbrook/Johan-Compass-Kit">Download or View at GitHub →</a>
-				<br /><small class="meta">1.0.1</small>
+				<br /><small class="meta">1.5</small>
 			</p>
 		</header>
 		
@@ -84,30 +84,33 @@
 				<pre>
 /sass
 	master
-	ie
-	_base
-	_main
-	_common
-	/common
-		_buttons
-		_columns
-		_forms
-		_meta
-		
-	/partials
-		_footer
-		_header
-		_post
+	- library/normalize
+	- compass/css3
+
+	- base
+		- library/variables
+		- library/mixins
+		- library/helpers
 	
-	/views
-		_home
+		- common
+			- common/fonts
+			- common/elements
+			- common/buttons
+			- common/forms
+			- common/columns
+			- common/animations
+
+	- main	
+		- partials
+			- partials/header
+			- partials/footer
+			- partials/post
 		
-	/library
-		_normalize
-		_hashgrid
+		- views
+			- views/home
 		
-	_print
-	_responsive
+	- responsive
+	- print
 
 /stylesheets
 	ie.css
