@@ -47,7 +47,6 @@
 			@include debugmessage("Mobile media query fired", "silver");
 		}
 		-webkit-text-size-adjust: 100%;
-		overflow-x: hidden;
 	}
 	
 	.hide-mobile{
