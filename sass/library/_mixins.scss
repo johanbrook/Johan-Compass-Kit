@@ -1,3 +1,8 @@
+// Show a debug message for this element (used for the body element as default)
+
+// @param $message	A string to show
+// @param $color	The background color of the debug box, defaults to yellow
+
 @mixin debugmessage($message, $color: yellow){
 	&::before{
 		content: $message;
@@ -13,6 +18,84 @@
 }
 
 
+// Make an <a> element block.
+
+@mixin link-block {
+	display: block;
+	
+	& > img {
+		display: block;
+	}
+}
+
+
+// Make an element span a certain amount of columns.
+
+// @param $span		How many columns to span, defaults to 1
+// @param $fluid	Whether the measures should be fluid or not, defaults to true
+
+@mixin column($span: 1, $fluid: true) {
+	float: left;
+	
+	@if $fluid == true {
+	width: make_fluid(get_columns($span));
+	margin-right: make_fluid($gutter);	
+	}
+	@else{
+	width: get_columns($span);
+	margin-right: $gutter;
+	}
+	
+	&.last {
+		margin-right: 0;
+	}
+}
+
+// Image replacement mixin.
+
+// @param $image	The image file
+
+@mixin image-replacement($image){
+	text-indent: -999em;
+	display: block;
+	background-image: image-url($image);
+	width: 100%;
+	max-width: image-width($image);
+	height: image-height($image);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+// Quick offsetting
+
+// @param $top		Top offset
+// @param $left		Left offset
+@mixin offset($top: auto, $left: auto){
+	position: relative;
+	left: $left;
+	top: $top;
+}
+
+
+// Antialias text
+
+// @param $state	"on" | "off". Defaults to "on"
+
+@mixin smooth($state: "on"){
+	@if $state == "on"{
+		-webkit-font-smoothing: antialiased;
+	}
+	@else{
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+}
+
+
+// Stretch an element width or height wise
+
+// @param $height	true | false. Defaults to true
+// @param $width	true | false. Defaults to true
+
 @mixin stretch($height: true, $width: true){
 	position: absolute;
 	@if($height == true){
@@ -26,7 +109,8 @@
 }
 
 
-// A regular clearfix which can be applied directly in the CSS (no need for nasty HTML classes): "@include clearfix" on parent element.
+// Clearfix mixin
+
 @mixin clearfix{
 	&:after{
 		visibility: hidden;
@@ -42,7 +126,7 @@
 }
 
 
-// Functions
+// FUNCTIONS
 
 // Really nifty function for responsive designing. Just use it like: 'width: make_fluid(308px)', and it'll return a percentage
 // based on the width of the container.
