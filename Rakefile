@@ -1,6 +1,6 @@
 require "rake"
 
-task :default => ["compile:dev"]
+task :default => ["compile:production"]
 
 namespace :compile do
   
