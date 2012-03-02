@@ -50,33 +50,30 @@ To have Compass watch your Sass file, and compile them on-the-fly:
 ## Import scheme
 
 	master
-	- library/normalize
-	- compass/css3
-	
-	- base
-		- library/variables
-		- library/mixins
-		- library/helpers
-		
-		- common
-			- common/fonts
-			- common/elements
-			- common/buttons
-			- common/forms
-			- common/columns
-			- common/animations
+	  - vendor/normalize
+	  - compass/css3
 
-	- main	
-		- partials
-			- partials/header
-			- partials/footer
-			- partials/post
-			
-		- views
-			- views/home
-			
-	- responsive
-	- print
+	  - library/variables
+	  - library/mixins
+	  - library/helpers
+
+	  - main	
+	
+		- common
+		  - common/elements
+		  - common/buttons
+		  - common/forms
+		  - common/columns
+		  - common/animations
+
+		- partials/header
+		- partials/footer
+		- partials/post
+
+		- views/home
+		- views/print
+	
+	  - responsive
 
 Compass compiles Sass files into CSS in development mode by default, so your CSS files will be uncompressed in development. Please see below ("Config" section) for quickly compiling for production. You're however able to [override this via the command line](http://compass-style.org/help/tutorials/command-line/).
 
