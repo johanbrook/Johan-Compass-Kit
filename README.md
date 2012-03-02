@@ -1,6 +1,6 @@
 # Johan's Compass Kit
 
-### Version 1.5
+### Version 1.6
 
 My sort-of personal CSS framework. Using [Sass](http://sass-lang.com) and [Compass](http://compass-style.org).
 
@@ -79,10 +79,6 @@ To have Compass watch your Sass file, and compile them on-the-fly:
 	- print
 
 Compass compiles Sass files into CSS in development mode by default, so your CSS files will be uncompressed in development. Please see below ("Config" section) for quickly compiling for production. You're however able to [override this via the command line](http://compass-style.org/help/tutorials/command-line/).
-
-### _base.scss
-
-`base.scss` is essentially a 'config' file with variables, mixins, resets, functions, helper classes – basically everything global you'd want to use all over your site. It gets imported before everything else.
 
 ### _main.scss
 
