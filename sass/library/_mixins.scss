@@ -55,15 +55,20 @@
 
 // @param $image	The image file
 
-@mixin image-replacement($image){
-	text-indent: -999em;
+@mixin image-replacement($image: false){
 	display: block;
-	background-image: image-url($image);
-	width: 100%;
-	max-width: image-width($image);
-	height: image-height($image);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	
+	@if $image != false {
+		background-image: image-url($image);
+		width: 100%;
+		max-width: image-width($image);
+		height: image-height($image);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;	
+	}
 }
 
 // Quick offsetting
@@ -79,14 +84,33 @@
 
 // Antialias text
 
-// @param $state	"on" | "off". Defaults to "on"
+// @param $state	true | false. Defaults to true
 
-@mixin smooth($state: "on"){
-	@if $state == "on"{
+@mixin smooth($state: true){
+	@if $state == true {
 		-webkit-font-smoothing: antialiased;
 	}
 	@else{
 		-webkit-font-smoothing: subpixel-antialiased;
+	}
+}
+
+
+// Relative Em units with fallback.
+
+// @param $target				The target pixel size
+// @param $include-lineheight	If the line-height property should be included. If true, line-height is 1.618.
+// @param $prop					Which property. Defaults to 'font-size'
+
+@mixin rem($target, $include-lineheight: true, $prop: "font-size") {
+	#{unquote($prop)}: #{$target}px; 	/* Fallback */
+	#{unquote($prop)}: #{$target/16}rem;
+	
+	@if $include-lineheight == true{
+		
+		@if $target > 20 {
+			line-height: 1.168;
+		}
 	}
 }
 
@@ -111,18 +135,21 @@
 
 // Clearfix mixin
 
-@mixin clearfix{
-	&:after{
-		visibility: hidden;
-     	display: block;
-	    font-size: 0;
-     	content: " ";
-     	clear: both;
-     	height: 0;	
+@mixin clearfix {
+	&::before,
+	&::after {
+	    content:"";
+	    display:table;
 	}
-	& {display: inline-block;}
-	* html & {height: 1%;}
-	& {display: block;}
+
+	&::after {
+	    clear:both;
+	}
+
+	/* For IE 6/7 (trigger hasLayout) */
+	& {
+	    zoom:1;
+	}
 }
 
 

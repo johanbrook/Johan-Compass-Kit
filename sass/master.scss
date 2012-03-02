@@ -12,15 +12,22 @@
 // Set this variable to 'true' to enable debugging features
 $DEBUG: true;
 
-// Mandatory
-@import "library/normalize";
+// Vendor
+@import "vendor/normalize";
 @import "compass/css3";
 
-// Config file
-@import "base";
+// Config
+
+$legacy-support-for-ie6: 		false;
+$legacy-support-for-ie7: 		false;
+$experimental-support-for-svg: 	true;
+
+// Imports
+
+@import "library/variables";
+@import "library/mixins";
+@import "library/helpers";
 
 // Main site styles
 @import "main";
-
 @import "responsive";
-@import "print";

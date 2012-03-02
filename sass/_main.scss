@@ -1,6 +1,3 @@
-@import "common";
-
-
 /*	=MAIN CSS FILE
 ----------------------------------------------------------------------*/
 
@@ -40,6 +37,9 @@ img::-moz-selection{
 	background: transparent;
 }
 
+// Common styles, such as elements, buttons.
+
+@import "common";
 
 
 // Partials
@@ -52,4 +52,5 @@ img::-moz-selection{
 // Views
 
 @import "views/home";
+@import "views/print";
 

@@ -1,0 +1,819 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------
+*
+*	STARTING POINT
+*
+*	Crafted by Johan Brook (http://johanbrook.com)
+*
+*	Using Sass (http://sass-lang.com) and Compass (http://compass-style.org)
+*
+*
+----------------------------------------------------------------*/
+/* normalize.css 2011-07-12T10:51 UTC · http://github.com/necolas/normalize.css */
+/* Modified by Johan Brook, 2011-07-17 */
+/* =============================================================================
+   HTML5 element display
+   ========================================================================== */
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ * Known limitation: IE6 will not apply style for 'audio[controls]'
+ */
+audio[controls],
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
+ *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+ * 4. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  overflow-y: scroll;
+  /* 2 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 4 */
+  -ms-text-size-adjust: 100%;
+  /* 4 */
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+body {
+  margin: 0;
+}
+
+/* 
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
+*/
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 0;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+mark {
+  background: yellow;
+  color: #000;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+/* 1 */
+q {
+  quotes: none;
+}
+
+/* 2 */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+small {
+  font-size: 85%;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+ul,
+ol {
+  margin: 0 0 1.5em;
+}
+
+dd {
+  margin-bottom: 1.5em;
+}
+
+nav ul,
+nav ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9 
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+form {
+  margin: 0;
+}
+
+/*
+ * Define consistent margin and padding
+ */
+fieldset {
+  margin: 0 3px;
+  padding: 0;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects alignment displayed oddly in IE6/7
+ */
+legend {
+  border: 0;
+  /* 1 */
+  *margin-left: -7px;
+  /* 2 */
+}
+
+label {
+  cursor: pointer;
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, F3/4, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/*
+ * 1. Addresses FF3/4 setting line-height using !important in the UA stylesheet
+ * 2. Corrects inner spacing displayed oddly in IE6/7
+ */
+button,
+input {
+  line-height: normal;
+  /* 1 */
+  *overflow: visible;
+  /* 2 */
+}
+
+/*
+ * Corrects overlap and whitespace issue for buttons and inputs in IE6/7
+ * Known issue: reintroduces inner spacing
+ */
+table button,
+table input {
+  *overflow: auto;
+}
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/*
+ * Addresses box sizing set to content-box in IE8/9
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+}
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Corrects inner padding displayed oddly in S5, Chrome on OSX
+ */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Corrects inner padding and border displayed oddly in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/* 
+ * Remove most spacing between table cells
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*- GLOBAL HELPER CLASSES
+----------------------------------------------------------------------*/
+/* Nicer ampersand */
+.amp {
+  font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Quick floating */
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+/* List styles */
+ul.bulleted {
+  list-style-type: disc;
+}
+
+ul.squared {
+  list-style-type: square;
+}
+
+ol.outside,
+ul.outside {
+  list-style-position: outside;
+  padding-left: 0;
+}
+
+/*- NON-SEMANTIC HELPER CLASSES
+----------------------------------------------------------------------*/
+/* Clearing stuff */
+.clear {
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: -1px 0 0 0;
+}
+
+/* Clearfix class */
+.group {
+  /* For IE 6/7 (trigger hasLayout) */
+}
+.group::before, .group::after {
+  content: "";
+  display: table;
+}
+.group::after {
+  clear: both;
+}
+.group {
+  zoom: 1;
+}
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+  display: none;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden {
+  position: absolute;
+  left: -999em;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+
+/*	=MAIN CSS FILE
+----------------------------------------------------------------------*/
+html {
+  background-color: #fff;
+  height: 100%;
+}
+
+body {
+  font: normal 0.938rem/1.6 Georgia, "Times New Roman", serif;
+  color: #222222;
+  -webkit-tap-highlight-color: #e32980;
+  /* Example: */
+  width: 80%;
+  margin: 0 auto;
+  max-width: 992px;
+  height: 100%;
+}
+
+/* Text and image selection styling */
+::selection {
+  background: #e32980;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #e32980;
+  color: #fff;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+/*- ELEMENT SETUP
+----------------------------------------------------------------------*/
+img,
+object,
+embed,
+video {
+  max-width: 100%;
+  height: auto;
+}
+img.noscale,
+object.noscale,
+embed.noscale,
+video.noscale {
+  max-width: none;
+}
+
+/* Make table headings align left */
+th {
+  text-align: left;
+}
+
+/*	=LINKS
+----------------------------------------------------------------------*/
+a {
+  color: #1975c0;
+  position: relative;
+}
+
+a:hover, a:focus {
+  color: #0377d6;
+}
+
+/* Make links 'clickable' */
+a:active, a:focus {
+  outline: none;
+  top: 1px;
+}
+
+/*	=HEADINGS
+----------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
+}
+
+.huge {
+  font-size: 39px;
+  /* Fallback */
+  font-size: 2.438rem;
+  line-height: 1.168;
+}
+
+h1 {
+  font-size: 28px;
+  /* Fallback */
+  font-size: 1.75rem;
+  line-height: 1.168;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 24px;
+  /* Fallback */
+  font-size: 1.5rem;
+  line-height: 1.168;
+}
+
+h3 {
+  font-size: 18px;
+  /* Fallback */
+  font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 14px;
+  /* Fallback */
+  font-size: 0.875rem;
+}
+
+/*	=MISC ELEMENTS
+----------------------------------------------------------------------*/
+p {
+  margin: 0;
+  padding: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+pre, code {
+  font-family: Monaco, "Courier New", Courier, monospace;
+  /* Code doesn't look that good antialiased */
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/*	=BUTTON STYLES
+----------------------------------------------------------------------*/
+.button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button {
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*	=FORM STYLING
+----------------------------------------------------------------------*/
+.text,
+textarea,
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  font-size: 99%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Errors: */
+.negative {
+  color: #cc0000;
+}
+
+/* Confirmations */
+.positive {
+  color: green;
+}
+
+/*	=COLUMNS
+----------------------------------------------------------------------*/
+/* A single column element */
+.column {
+  float: left;
+  margin-right: 1.613%;
+  /* The last in a row */
+}
+.column.last {
+  margin-right: 0;
+}
+
+/* Span half of the site's width */
+.half, .six-cols {
+  width: 49%;
+}
+
+.third, .four-cols {
+  width: 32%;
+}
+
+/* And then it's up to you to continue building with whichever grid system you like ... */
+/*	=HEADER
+----------------------------------------------------------------------*/
+/*	=FOOTER
+----------------------------------------------------------------------*/
+/*	=POST/ARTICLE STYLES
+----------------------------------------------------------------------*/
+[role="article"] p {
+  margin-bottom: 1.6em;
+}
+
+/*	=EXAMPLE HOME VIEW
+----------------------------------------------------------------------*/
+/* Temporary styles for the demo page. Feel free to remove. */
+.home {
+  padding-top: 3.2em;
+}
+.home figcaption {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #777;
+}
+.home section, .home hgroup {
+  margin-bottom: 4.8em;
+}
+.home #intro {
+  margin: 0 auto;
+}
+.home .group {
+  margin-bottom: 3.2em;
+}
+.home p {
+  margin-bottom: 1.6em;
+}
+
+/*	=PRINT STYLES
+----------------------------------------------------------------------*/
+/*	=RESPONSIVE STYLES
+----------------------------------------------------------------------
+	
+	I highly encourage you to tailor these queries to fit your project. */
+/* For iPhone 4 and high-def Android phones. Remember to use 'background-size' do define the original dimensions  */
+/* 
+		TABLET LAYOUT
+			Or smaller screens. Define the 'max-width' to whatever.
+			
+		Inherits styles from: default layout
+
+--------------------------------------------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  body::before {
+    content: "Tablet media query fired";
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: yellow;
+    position: absolute;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
+  }
+}
+/* 
+		MOBILE LAYOUT
+			
+		Inherits styles from: default layout	
+		
+--------------------------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  body::before {
+    content: "Mobile media query fired";
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: silver;
+    position: absolute;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  /* All columns now stack on top of each other */
+  .column {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+}
+/*
+
+	SMALL SCREEN LAYOUT
+		Like the iPhone in portrait mode
+	
+	Inherits styles from: mobile layout and default layout.
+
+--------------------------------------------------------------------------------- */
+@media only screen and (max-width: 479px) {
+  body {
+    font-size: .8em;
+  }
+  body::before {
+    content: "Small screen mobile media query fired";
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: red;
+    position: absolute;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
+  }
+}

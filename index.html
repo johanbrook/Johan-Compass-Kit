@@ -85,33 +85,30 @@
 				<pre>
 /sass
 master
-  - library/normalize
+  - vendor/normalize
   - compass/css3
 
-  - base
-	- library/variables
-	- library/mixins
-	- library/helpers
+  - library/variables
+  - library/mixins
+  - library/helpers
 
-  - common
-	- common/fonts
-	- common/elements
-	- common/buttons
-	- common/forms
-	- common/columns
-	- common/animations
+  - main	
+	
+	- common
+	  - common/elements
+	  - common/buttons
+	  - common/forms
+	  - common/columns
+	  - common/animations
 
-	- main	
-	  - partials
-	    - partials/header
-	    - partials/footer
-	    - partials/post
+	- partials/header
+	- partials/footer
+	- partials/post
+
+	- views/home
+	- views/print
 	
-	- views
-	    - views/home
-	
-- responsive
-- print
+  - responsive
 
 /stylesheets
 	ie.css
@@ -199,8 +196,6 @@ master
 
 		<section>
 			<h1>Columns</h1>
-			
-			<p class="meta">(press and hold '<kbd>G</kbd>' on your keyboard to view the 12 column grid)</p>
 			
 			<div class="group">
   			

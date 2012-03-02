@@ -68,7 +68,6 @@ h2 {
 
 h3 {
 	@include rem(18);
-	color: $gray;
 }
 
 h4 {
@@ -97,5 +96,13 @@ pre, code{
 
 
 blockquote{
+	
+}
+
+kbd {
+	
+}
+
+del {
 	
 }
