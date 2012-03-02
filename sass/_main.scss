@@ -1,6 +1,7 @@
+@import "common";
+
+
 /*	=MAIN CSS FILE
-	
-	Put all *main* site styles here. Use @imports.
 ----------------------------------------------------------------------*/
 
 html{
@@ -9,10 +10,9 @@ html{
 }
 
 body{
-	font: normal #{$fontsize}/#{$lineheight} $serif;
+	font: normal #{$fontsize}/#{$ratio} $serif;
 	color: $bodycolor;	
-	
-	/* Use the body element as site wrapper if possible. Define widths/margins here, and please make use of 'max-width' */
+	-webkit-tap-highlight-color: $highlight;
 	
 	/* Example: */
 	width: 80%;
@@ -38,82 +38,6 @@ img::selection{
 }
 img::-moz-selection{
 	background: transparent;
-}
-
-
-
-
-
-/*	=LINKS
-----------------------------------------------------------------------*/
-
-a {
-	-webkit-tap-highlight-color: $highlight;
-	color: $accent;
-}
-
-a:hover, a:focus{
-	color: saturate($accent, 20%);
-}
-
-
-/*	=HEADINGS
-----------------------------------------------------------------------*/
-
-h1,h2,h3,h4,h5,h6{
-	font-family: $serif;
-	font-weight: normal;
-	-webkit-font-smoothing: antialiased;
-}
-
-/* Grouped headings */
-
-hgroup{
-	margin-bottom: $lineheight;
-	
-	h1, h2, h3, h4, h5, h6{
-		margin-bottom: 0;
-	}
-}
-
-/* Sub headings, in a hgroup for instance */
-
-.sub{
-	color: #888;
-	font-style: italic;
-}
-
-
-h1{
-	font-size: 2.618em;
-	line-height: $lineheight*2;
-	margin-bottom: $lineheight;
-	
-	&.huge{
-		font-size: 4.236em;
-		line-height: $lineheight*3;
-	}
-}
-
-h2{
-	font-size: 1.984em;
-	line-height: $lineheight*2;
-	margin-bottom: ceil($lineheight / 2);
-}
-
-
-h3{
-	font-size: 1.618em;
-	margin-bottom: ceil($lineheight / 2);
-}
-
-h4{
-	font-size: 1.226em;
-	margin-bottom: ceil($lineheight / 4);
-}
-
-h5{
-	font-size: 1.1em;
 }
 
 

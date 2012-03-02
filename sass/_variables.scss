@@ -18,10 +18,15 @@ $serif: 		Georgia, "Times New Roman", serif;
 $sans: 			"Helvetica Neue", Helvetica, Arial, sans-serif;
 $monospaced: 	Monaco, "Courier New", Courier, monospace;
 
+// Typography
 
-$fontsize:		15px;
-$lineheight: 	24px;
+$size:			15;
+$leading:		24;
 
+$fontsize:		$size/16 * 1rem;
+$ratio:			$leading/$size;
+
+$lineheight:	$ratio*1em;
 
 // Layout
 

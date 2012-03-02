@@ -10,8 +10,6 @@ $experimental-support-for-svg: 	true;
 
 // Imports
 
-@import "library/variables";
+@import "variables";
 @import "library/mixins";
 @import "library/helpers";
-
-@import "common";

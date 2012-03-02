@@ -1,24 +1,18 @@
 /*- ELEMENT SETUP
 ----------------------------------------------------------------------*/
 
-img {
+img,
+object,
+embed,
+video {
 	max-width: 100%;
 	height: auto;
 	
-	&.noscale{
+	&.noscale {
 		max-width: none;
 	}
 }
 
-/* Make links 'clickable' */
-a{
-	position: relative;
-}
-
-a:active, a:focus{
-	outline: none;
-	top: 1px;
-}
 
 /* Make table headings align left */
 th{
@@ -26,28 +20,64 @@ th{
 }
 
 
-/* Emphasize the kbd element */
-kbd{
-	font-family: $sans;
-	font-weight: bolder;
+/*	=LINKS
+----------------------------------------------------------------------*/
+
+a {
+	color: $accent;
+	position: relative;
 }
 
-del{
-	color: #666;
+a:hover, a:focus{
+	color: saturate($accent, 20%);
+}
+
+/* Make links 'clickable' */
+a:active, a:focus{
+	outline: none;
+	top: 1px;
 }
 
 
-h1, h2, h3, h4, h5, h6{
-	/* Fixes kerning. Watch out for some performance issues. */
-	text-rendering: optimizeLegibility;	
+/*	=HEADINGS
+----------------------------------------------------------------------*/
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
 	margin: 0;
 	padding: 0;
-	font-size: 1em;
 	
 	a{
 		font-weight: inherit;
 	}
 }
+
+
+.huge {
+	@include rem(39);
+}
+
+h1 {
+	@include rem(28);
+	margin-bottom: 1em;
+}
+
+h2 {
+	@include rem(24);
+}
+
+h3 {
+	@include rem(18);
+	color: $gray;
+}
+
+h4 {
+	@include rem(14);
+}
+
+
+/*	=MISC ELEMENTS
+----------------------------------------------------------------------*/
 
 p{
 	margin: 0;
@@ -64,16 +94,6 @@ pre, code{
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
-
-
-
-/*	=MISC ELEMENTS
-----------------------------------------------------------------------*/
-
-pre{
-	background-color: #eee;
-	padding: $lineheight / 4 $gutter;
-}
 
 
 blockquote{
