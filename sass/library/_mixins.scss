@@ -53,22 +53,11 @@
 
 // Image replacement mixin.
 
-// @param $image	The image file
-
-@mixin image-replacement($image: false){
+@mixin image-replacement {
 	display: block;
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
-	
-	@if $image != false {
-		background-image: image-url($image);
-		width: 100%;
-		max-width: image-width($image);
-		height: image-height($image);
-		background-size: 100% 100%;
-		background-repeat: no-repeat;	
-	}
 }
 
 // Quick offsetting
