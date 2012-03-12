@@ -25,10 +25,3 @@
 	}
 	
 })(document, window);
-
-
-$(function(){
-	
-	var grid = new hashgrid();
-	
-});
